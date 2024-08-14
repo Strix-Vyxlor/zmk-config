@@ -57,7 +57,7 @@
       bindings = <
         &none   &none      &none    &kp C_VOL_UP &none                       &none   &kp PGUP &none  &none     &none
         &to DPM &kp C_PREV &kp C_PP &kp C_NEXT   &none                       &to CON &kp LEFT &kp DOWN &kp UP &kp RIGHT
-        &none   &none      &none    &kp C_VOL_UP &none                       &none   &kp PGDN &none  &none     &none
+        &none   &none      &none    &kp C_VOL_DN &none                       &none   &kp PGDN &none  &none     &none
                                          &mo SYM &none                       &none &mo NUM
       >; 
     };
