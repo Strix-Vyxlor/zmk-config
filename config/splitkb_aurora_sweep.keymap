@@ -73,9 +73,9 @@
 
     control_layer {
       bindings = <
-        &none        &none        &bt BT_CLR   &bt BT_NXT  /* &sys_reset */ &none                       /* &sys_reset */ &none /* &out OUT_BLE */ &none &none &none &none
-        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &none       /* &out OUT_TOG */ &none &none &none &none
-        &none        &none        &bt BT_DISC  &bt BT_PRV  /* &bootloader */ &none                       /* &bootloader */ &none /* &out OUT_USB */ &none &none &none &none
+        &none        &none       /* &bt BT_CLR   &bt BT_NXT */ &none &none  /* &sys_reset */ &none                       /* &sys_reset */ &none /* &out OUT_BLE */ &none &none &none &none
+        /* &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 */ &none &none &none &none &none                     &none       /* &out OUT_TOG */ &none &none &none &none
+        &none        &none       /* &bt BT_DISC  &bt BT_PRV */ &none &none /* &bootloader */ &none                       /* &bootloader */ &none /* &out OUT_USB */ &none &none &none &none
                                                          &to DEF &to DEF                       &to DEF &to DEF
       >;
     };
@@ -109,6 +109,8 @@
 
     hws: hyprland_workspace_switch {
       compatible = "zmk,behavior-macro-one-param";
+      wait-ms = <40>;
+      tap-ms = <40>;
       #binding-cells = <1>;
       bindings = 
         <&macro_press &kp LGUI>,
@@ -119,6 +121,8 @@
 
     hww: hyprland_window_to_workspace {
       compatible = "zmk,behavior-macro-one-param";
+      wait-ms = <40>;
+      tap-ms = <40>;
       #binding-cells = <1>;
       bindings = 
         <&macro_press &kp LGUI>,
