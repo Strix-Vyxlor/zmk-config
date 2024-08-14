@@ -77,39 +77,39 @@
 #define BE_SCLN COMMA // ;
 #define BE_COLN PERIOD  // :
 #define BE_EQL  SLASH // =
-#define BE_SUP3 S(BE_SUP2) // ³
-#define BE_1    S(BE_AMPR) // 1
-#define BE_2    S(BE_EACU) // 2
-#define BE_3    S(BE_DQUO) // 3
-#define BE_4    S(BE_QUOT) // 4
-#define BE_5    S(BE_LPRN) // 5
-#define BE_6    S(BE_SECT) // 6
-#define BE_7    S(BE_EGRV) // 7
-#define BE_8    S(BE_EXLM) // 8
-#define BE_9    S(BE_CCED) // 9
-#define BE_0    S(BE_AGRV) // 0
-#define BE_DEG  S(BE_RPRN) // °
-#define BE_UNDS S(BE_MINS) // _
-#define BE_DIAE S(BE_DCIR) // ¨ (dead)
-#define BE_ASTR S(BE_DLR)  // *
-#define BE_PERC S(BE_UGRV) // %
-#define BE_PND  S(BE_MICR) // £
-#define BE_RABK S(BE_LABK) // >
-#define BE_QUES S(BE_COMM) // ?
-#define BE_DOT  S(BE_SCLN) // .
-#define BE_SLSH S(BE_COLN) // /
-#define BE_PLUS S(BE_EQL)  // +
-#define BE_PIPE ALGR(BE_AMPR) // |
-#define BE_AT   ALGR(BE_EACU) // @
-#define BE_HASH ALGR(BE_DQUO) // #
-#define BE_CIRC ALGR(BE_SECT) // ^
-#define BE_LCBR ALGR(BE_CCED) // {
-#define BE_RCBR ALGR(BE_AGRV) // }
-#define BE_EURO ALGR(BE_E)    // €
-#define BE_LBRC ALGR(BE_DCIR) // [
-#define BE_RBRC ALGR(BE_DLR)  // ]
-#define BE_ACUT ALGR(BE_UGRV) // ´ (dead)
-#define BE_GRV  ALGR(BE_MICR) // ` (dead)
-#define BE_BSLS ALGR(BE_LABK) // (backslash)
-#define BE_TILD ALGR(BE_EQL)  // ~
+#define BE_SUP3 LS(BE_SUP2) // ³
+#define BE_1    LS(BE_AMPR) // 1
+#define BE_2    LS(BE_EACU) // 2
+#define BE_3    LS(BE_DQUO) // 3
+#define BE_4    LS(BE_QUOT) // 4
+#define BE_5    LS(BE_LPRN) // 5
+#define BE_6    LS(BE_SECT) // 6
+#define BE_7    LS(BE_EGRV) // 7
+#define BE_8    LS(BE_EXLM) // 8
+#define BE_9    LS(BE_CCED) // 9
+#define BE_0    LS(BE_AGRV) // 0
+#define BE_DEG  LS(BE_RPRN) // °
+#define BE_UNDS LS(BE_MINS) // _
+#define BE_DIAE LS(BE_DCIR) // ¨ (dead)
+#define BE_ASTR LS(BE_DLR)  // *
+#define BE_PERC LS(BE_UGRV) // %
+#define BE_PND  LS(BE_MICR) // £
+#define BE_RABK LS(BE_LABK) // >
+#define BE_QUES LS(BE_COMM) // ?
+#define BE_DOT  LS(BE_SCLN) // .
+#define BE_SLSH LS(BE_COLN) // /
+#define BE_PLUS LS(BE_EQL)  // +
+#define BE_PIPE RA(BE_AMPR) // |
+#define BE_AT   RA(BE_EACU) // @
+#define BE_HASH RA(BE_DQUO) // #
+#define BE_CIRC RA(BE_SECT) // ^
+#define BE_LCBR RA(BE_CCED) // {
+#define BE_RCBR RA(BE_AGRV) // }
+#define BE_EURO RA(BE_E)    // €
+#define BE_LBRC RA(BE_DCIR) // [
+#define BE_RBRC RA(BE_DLR)  // ]
+#define BE_ACUT RA(BE_UGRV) // ´ (dead)
+#define BE_GRV  RA(BE_MICR) // ` (dead)
+#define BE_BSLS RA(BE_LABK) // (backslash)
+#define BE_TILD RA(BE_EQL)  // ~
 
