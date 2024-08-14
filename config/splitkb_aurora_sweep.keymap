@@ -29,7 +29,7 @@
         &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
         &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
         &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp BE_COMM &kp BE_SCLN &mt LGUI BE_COLN &mt LALT BE_EQL
-                           &mt LSHFT SPC &lt SYM ESC                       &lt NUM RET &ctbs
+                           &mt LSHFT SPC &lt SYM ESC                       &lt NUM RET &ctbs LCTRL 0
       >;
     };
 
@@ -90,8 +90,8 @@
 
   ctbs: layer_tap_bspc_del {
     compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>;
-    bindings = <&kp LCTRL>, <&bsdl>;
+    #binding-cells = <2>;
+    bindings = <&kp>, <&bsdl>;
     tapping-term-ms = <200>;
   };
 };
