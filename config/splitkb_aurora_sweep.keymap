@@ -7,7 +7,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "keymap_belgian.h"
 
+#define DEF 0
+#define SYM 1
+#define NUM 2
+#define NAV 3
 
 &mt {
   //  flavor = "tap-preferred";
@@ -16,87 +21,60 @@
 
 / {
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
+  keymap {
+    compatible = "zmk,keymap";
 
-         combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-
-
-       combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-
-
-
+    default_layer {
+      bindings = <
+        &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
+        &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
+        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp BE_COMM &kp BE_SCLN &mt LGUI BE_COLN &mt LALT BE_EQL
+                           &lt SYM RET &mt LCTL BKSP                       &mt LSHIFT SPC &lt NUM ESC
+      >;
     };
 
-        keymap {
-                compatible = "zmk,keymap";
-
-            default_layer {
-        bindings = <
-        &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U  &kp I    &kp O   &kp P
-        &kp A &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp QUOT
-        &mt LSFT Z &kp X &kp C &kp V &kp B                      &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-                        &mo 1 &kp LCTL                  &kp SPC &mo 2
-        >;
-        };
-
-            left_layer {
-        bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5     &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
-        &kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH         &kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL
-        &kp ESC    &kp TILDE    &kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2     &kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL
-                        &mo 1  &kp LGUI                     &kp RGUI &mo 2
-        >;
-        };
-
-        right_layer {
-        bindings = <
-        &kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT             &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
-        &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-        &kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH             &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTL                &kp SPC  &mo 2
-        >;
-        };
-
-        tri_layer {
-        bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5             &trans &trans   &trans   &trans  &trans
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans
-        &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7                 &trans &kp PG_DN  &kp K_VOL_DN  &trans &trans
-                     &trans &trans                      &trans &trans
-        >;
-        };
-
+    symbol_layer {
+      bindings = <
+        &kp A &kp Z &kp E &kp R &kp T                       &kp Y &kp U    &kp I    &kp O    &kp P
+        &kp Q &kp S &kp D &kp F &kp G                       &kp H &kp J    &kp K    &kp L    &kp M
+        &kp W &kp X &kp C &kp V &kp B                       &kp N &kp CMMA &kp SCLN &kp COLN &kp EQL
+                        &mo SYM &none                       &kp TAB &mo NUM
+      >;      
     };
+
+    number_layer {
+     bindings = <
+        &none       &kp BE_PERC &kp BE_MINS  &kp BE_PLUS &none                         &none    &kp BE_ASTR &kp BE_SLSH &kp BE_CIRC
+        &kp BE_1    &kp BE_2    &kp BE_3   &kp BE_4      &kp BE_5                      &kp BE_6 &kp BE_6    &kp BE_8    &kp BE_9 &kp BE_0
+        &kp LSHIFT  &none       &none      &kp BE_DOT    &none                         &none    &kp BE_COMM &none       &none    &kp LSHIFT
+                                          &lt SYM RET &kp LGUI                      &kp LSHIFT &mo NUM
+      >; 
+    };
+
+    navigation_layer {
+      bindings = <
+        &kp A &kp Z &kp E &kp R &kp T                       &kp Y &kp U    &kp I    &kp O    &kp P
+        &kp Q &kp S &kp D &kp F &kp G                       &kp H &kp J    &kp K    &kp L    &kp M
+        &kp W &kp X &kp C &kp V &kp B                       &kp N &kp CMMA &kp SCLN &kp COLN &kp EQL
+                        &mo SYM &none                       &kp TAB &mo NUM
+      >; 
+    };
+  };
+
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+    navigation_layer {
+      if-layers = <SYM NUM>;
+      then-layer = <NAV>;
+    };
+  };
+
+  macros {
+    ud_tild: ud_tild {
+      compatible = "zmk,behavior-macro";
+      wait-ms = <40>;
+      tap-ms = <40>;
+      bindings = <&kp BE_TILD>, <&kp SPACE>;
+    }
+  }
 };
