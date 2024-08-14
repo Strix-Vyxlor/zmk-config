@@ -30,7 +30,7 @@
 
 // Aliases
 #define BE_SUP2 GRAVE  // ²
-#define BE_AMPR n1    // &
+#define BE_AMPR N1    // &
 #define BE_EACU N2    // é
 #define BE_DQUO N3    // "
 #define BE_QUOT N4    // '
