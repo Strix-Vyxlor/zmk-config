@@ -39,7 +39,7 @@
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
         &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
-        &none       &none       &none       &kp BE_AMPR &none                             &none &none       &none       &none             &none
+        &none       &none       &none       &kp BE_AMPR &kp BE_AT                         &none &kp BE_EXLM &none       &none             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
     };
@@ -56,8 +56,9 @@
     navigation_layer {
       bindings = <
         &none   &none      &none    &kp C_VOL_UP &none                       &none   &kp PGUP &none  &none     &none
-        &to DPM &kp C_PREV &kp C_PP &kp C_NEXT   &none                       &to CON &kp LEFT &kp DOWN &kp UP &kp RIGHT
-        &none   &none      &none    &kp C_VOL_DN &none                       &none   &kp PGDN &none  &none     &none
+        &to DPM &kp C_PREV &kp C_PP &kp C_NEXT   &none                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &to CON 
+        &none   &none      &kp LCTRL &kp C_VOL_DN &none
+        &none   &kp PGDN &none  &none     &none
                                          &mo SYM &none                       &none &mo NUM
       >; 
     };
