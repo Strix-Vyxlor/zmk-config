@@ -29,25 +29,25 @@
         &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
         &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
         &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp BE_COMM &kp BE_SCLN &mt LGUI BE_COLN &mt LALT BE_EQL
-                           &mt LSHFT SPC &lt SYM ESC                       &lt NUM RET &mt LCTRL BSPC
+                           &mt LSHFT SPC &lt SYM ESC                       &lt NUM RET &mt LCTRL &bsdl
       >;
     };
 
     symbol_layer {
       bindings = <
-        &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp T                       &kp Y &kp BE_RPRN    &kp BE_RCBR    &kp BE_RBRC    &kp BE_RABK
-        &kp Q &kp S &kp BE_UNDS &kp BE_DOT &kp G                       &kp H &kp BE_COMM    &kp BE_MINS    &kp L    &kp M
-        &kp W &kp X &kp C &kp V &kp B                       &kp N &kp CMMA &kp SCLN &kp COLN &kp EQL
-                        &none &mo SYM                       &mo NUM &kp TAB
+        &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &none                       &none &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
+        &none       &none       &kp BE_UNDS &kp BE_DOT  &none                       &none &kp BE_COMM &kp BE_MINS &none       &none
+        &none       &none       &none       &none       &none                       &none &none       &none       &none       &none
+                                                &none &mo SYM                       &mo NUM &kp TAB
       >;      
     };
 
     number_layer {
       bindings = <
-        &kp A &kp BE_PERC &kp BE_MINS &kp BE_PLUS &kp T                       &kp BE_COLN &kp BE_ASTR    &kp BE_SLSH    &kp BE_CIRC    &kp P
-        &kp BE_1 &kp BE_2 &kp BE_3 &kp BE_4 &kp BE_5                       &kp BE_6 &kp BE_7    &kp BE_8    &kp BE_9    &kp BE_0
-        &kp W &kp X &kp C &kp LSHFT &kp B                       &kp N &kp LSHFT &kp SCLN &kp COLN &kp EQL
-                 &kp LGUI &mo SYM                       &mo NUM &kp LGUI
+        &none    &kp BE_PERC &kp BE_MINS &kp BE_PLUS &none                          &kp BE_COLN &kp BE_ASTR &kp BE_SLSH &kp BE_CIRC &none
+        &kp BE_1 &kp BE_2    &kp BE_3    &kp BE_4    &kp BE_5                       &kp BE_6    &kp BE_7    &kp BE_8    &kp BE_9    &kp BE_0
+        &none    &none       &none       &kp LSHFT   &none                          &none       &kp LSHFT   &none       &none       &none
+                                                &none &mo SYM                       &mo NUM &none
       >; 
     };
 
@@ -70,12 +70,21 @@
   };
 
   macros {
-    ud_tild: ud_tild {
+    ud_tild: undead_tilda {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <40>;
       tap-ms = <40>;
       bindings = <&kp BE_TILD>, <&kp SPACE>;
+    };
+  };
+
+  behaviors {
+    bsdl: backspace_delete {        
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp BSPC>, <&kp DEL>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
   };
 };
