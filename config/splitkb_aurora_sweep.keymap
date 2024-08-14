@@ -35,8 +35,8 @@
 
     symbol_layer {
       bindings = <
-        &kp A &kp Z &kp E &kp R &kp T                       &kp Y &kp U    &kp I    &kp O    &kp P
-        &kp Q &kp S &kp D &kp F &kp G                       &kp H &kp J    &kp K    &kp L    &kp M
+        &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp T                       &kp Y &kp BE_RPRN    &kp BE_RCBR    &kp BE_RBRC    &kp BE_RABK
+        &kp Q &kp S &kp BE_UNDS &kp BE_DOT &kp G                       &kp H &kp BE_COMM    &kp BE_MINS    &kp L    &kp M
         &kp W &kp X &kp C &kp V &kp B                       &kp N &kp CMMA &kp SCLN &kp COLN &kp EQL
                         &mo SYM &none                       &kp TAB &mo NUM
       >;      
@@ -53,9 +53,9 @@
 
     navigation_layer {
       bindings = <
-        &kp A &kp Z &kp E &kp R &kp T                       &kp Y &kp U    &kp I    &kp O    &kp P
-        &kp Q &kp S &kp D &kp F &kp G                       &kp LEFT &kp DOWN    &kp UP    &kp RIGHT    &kp M
-        &kp W &kp X &kp C &kp V &kp B                       &kp N &kp CMMA &kp SCLN &kp COLN &kp EQL
+        &kp A &kp Z &kp E &kp R &kp T                       &kp Y &kp PGUP    &kp I    &kp O    &kp P
+        &kp Q &kp C_PREV &kp C_PP &kp C_NEXT &kp G                       &kp LEFT &kp DOWN    &kp UP    &kp RIGHT    &kp M
+        &kp W &kp X &kp C &kp V &kp B                       &kp N &kp PGDN &kp SCLN &kp COLN &kp EQL
                         &mo SYM &none                       &kp TAB &mo NUM
       >; 
     };
