@@ -152,6 +152,6 @@
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     bindings = <&mo>, <&bsdl>;
-    tapping-term-ms = <170>;
+    tapping-term-ms = <150>;
   };
 };
