@@ -18,7 +18,11 @@
 #define CON 5
 
 &mt {
-  tapping-term-ms = <170>;
+  tapping-term-ms = <150>;
+};
+
+&lt {
+  tapping-term-ms = <150>;
 };
 
 / {
