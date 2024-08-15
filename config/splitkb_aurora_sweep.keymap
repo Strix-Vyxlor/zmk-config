@@ -34,7 +34,7 @@
       bindings = <
         &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
         &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
-        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp BE_COMM &kp BE_SCLN &mt LGUI BE_COLN &mt LALT BE_EQL
+        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &mt LGUI BE_COMM &mt LALT BE_SCLN &kp BE_COLN &kp BE_EQL
                            &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
       >;
     };
@@ -43,7 +43,7 @@
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
         &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
-        &none       &none       &none       &kp BE_AMPR &kp BE_AT                         &none &kp BE_EXLM &none       &none             &none
+        &none       &none       &none       &kp BE_AMPR &kp BE_AT                         &udtd &kp BE_EXLM &none       &none             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
     };
@@ -104,7 +104,7 @@
   };
 
   macros {
-    ud_tild: undead_tilda {
+    udtd: undead_tilda {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <40>;
