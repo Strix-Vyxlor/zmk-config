@@ -101,7 +101,7 @@
         &none &none &none &none &none                       &none &none &none &none &none
         &none &none &none &none &none                       &none &none &none &none &none
         &none &none &none &none &none                       &none &none &none &none &none
-                      &to DEF &to DEF                       &to COL &to control_laye
+                      &to DEF &to DEF                       &to COL &to COL
       >;
     };
 
