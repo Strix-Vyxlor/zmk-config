@@ -11,11 +11,12 @@
 #include "keymap_belgian.h"
 
 #define DEF 0
-#define SYM 1
-#define NUM 2
-#define NAV 3
-#define DPM 4
-#define CON 5
+#define COL 1
+#define SYM 2
+#define NUM 3
+#define NAV 4
+#define DPM 5
+#define CON 6
 
 &mt {
   tapping-term-ms = <170>;
@@ -34,7 +35,16 @@
       bindings = <
         &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
         &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
-        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &mt LGUI BE_COMM &mt LALT BE_SCLN &kp BE_COLN &kp BE_EQL
+        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp LGUI &kp LALT &none &to COL
+                           &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
+      >;
+    };
+
+    colemack_layer {
+      bindings = <
+        &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &kp LGUI
+        &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
+        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &kp LALT &none &to DEF
                            &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
       >;
     };
