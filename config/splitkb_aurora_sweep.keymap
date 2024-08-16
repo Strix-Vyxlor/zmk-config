@@ -17,6 +17,7 @@
 #define NAV 4
 #define DPM 5
 #define CON 6
+#define SCH 7
 
 &mt {
   tapping-term-ms = <170>;
@@ -53,7 +54,7 @@
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
         &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
-        &none       &none       &none       &kp BE_AMPR &kp BE_AT                         &udtd &kp BE_EXLM &none       &none             &none
+        &none       &none       &kp BE_AT   &kp BE_AMPR &to SCH                         &udtd &kp BE_EXLM &none       &none             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
     };
@@ -92,6 +93,15 @@
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none      &out OUT_TOG &none &none &none
         &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4                       &none      &out OUT_USB &none &none &none
                                                               &to DEF &to DEF                       &to DEF &to DEF
+      >;
+    };
+
+    school_layer {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &none &none &none &none                       &none &none &none &none &none
+                          &none &none                       &none &none
       >;
     };
 
