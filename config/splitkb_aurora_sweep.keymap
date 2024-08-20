@@ -11,18 +11,20 @@
 #include "keymap_belgian.h"
 
 #define DEF 0
-#define SYM 1
-#define NUM 2
-#define NAV 3
-#define DPM 4
-#define CON 5
+#define COL 1
+#define SYM 2
+#define NUM 3
+#define NAV 4
+#define DPM 5
+#define CON 6
+#define SCH 7
 
 &mt {
-  tapping-term-ms = <150>;
+  tapping-term-ms = <170>;
 };
 
 &lt {
-  tapping-term-ms = <150>;
+  tapping-term-ms = <170>;
 };
 
 / {
@@ -42,7 +44,16 @@
       bindings = <
         &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
         &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
-        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &mt LGUI BE_COMM &mt LALT BE_SCLN &kp BE_COLN &kp BE_EQL
+        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp LGUI &kp LALT &none &to COL
+                           &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
+      >;
+    };
+
+    colemack_layer {
+      bindings = <
+        &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &kp LGUI
+        &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
+        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &kp LALT &none &to DEF
                            &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
       >;
     };
@@ -51,7 +62,7 @@
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
         &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
-        &none       &none       &none       &kp BE_AMPR &kp BE_AT                         &udtd &kp BE_EXLM &none       &none             &none
+        &none       &none       &kp BE_AT   &kp BE_AMPR &to SCH                         &udtd &kp BE_EXLM &none       &none             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
     };
@@ -80,7 +91,7 @@
         &hww N1 &hww N2 &hww N3 &hww N4 &none                       &none &hww N5 &hww N6 &hww N7 &hww N8 
         &hws N1 &hws N2 &hws N3 &hws N4 &none                       &none &hws N5 &hws N6 &hws N7 &hws N8
         &none   &none   &none   &none   &none                       &none &none   &none   &none   &none
-                              &to DEF &to DEF                       &to DEF &to DEF
+                              &to DEF &to DEF                       &to COL &to COL
       >;
     };
 
@@ -89,7 +100,16 @@
         &bootloader   &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &sys_reset                          &sys_reset &out OUT_BLE &none &none &bootloader 
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none      &out OUT_TOG &none &none &none
         &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4                       &none      &out OUT_USB &none &none &none
-                                                              &to DEF &to DEF                       &to DEF &to DEF
+                                                              &to DEF &to DEF                       &to COL &to COL
+      >;
+    };
+
+    school_layer {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &none &none &none &none                       &none &none &none &none &none
+                      &to DEF &to DEF                       &to COL &to COL
       >;
     };
 
@@ -160,6 +180,6 @@
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     bindings = <&mo>, <&bsdl>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <170>;
   };
 };
