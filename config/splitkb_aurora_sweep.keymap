@@ -63,7 +63,7 @@
     symbol_layer {
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
-        &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_DEFN &kp BE_PLUS
+        &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
         &none       &kp BE_DLR  &kp BE_AT   &kp BE_AMPR &to SCH                         &udtd &kp BE_EXLM &kp BE_EQL &none             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
@@ -71,7 +71,7 @@
 
     number_layer {
       bindings = <
-        &none    &kp BE_PERC &kp BE_MINS &kp BE_PLUS &none                          &kp BE_DEFN &kp BE_ASTR &kp BE_SLSH &kp BE_CIRC &none
+        &none    &kp BE_PERC &kp BE_MINS &kp BE_PLUS &none                          &kp BE_COLN &kp BE_ASTR &kp BE_SLSH &kp BE_CIRC &none
         &kp BE_1 &kp BE_2    &kp BE_3    &kp BE_4    &kp BE_5                       &kp BE_6    &kp BE_7    &kp BE_8    &kp BE_9    &kp BE_0
         &none    &none       &none       &kp LSHFT   &none                          &none       &kp LSHFT   &none       &none       &none
                                               &mo SYM &kp TAB                       &none &mo NUM
