@@ -120,7 +120,7 @@
         &kp TAB   &kp BE_A &kp BE_Z &kp BE_E &kp BE_R                       &kp BE_T &kp BE_Y &kp BE_U &kp BE_I &kp BE_O 
         &kp LSHFT &kp BE_Q &kp BE_S &kp BE_D &kp BE_F                       &kp BE_G &kp BE_H &kp BE_J &kp BE_K &kp BE_L 
         &kp LCTRL &kp BE_W &kp BE_X &kp BE_C &kp BE_V                       &kp BE_B &kp BE_N &kp BE_COMM &kp BE_SCLN &to DEF
-                                    &kp ESC &kp SPACE                       &kp LALT &kp ENTER
+                                   &kp LALT &kp SPACE                       &kp ESC &mo SYM
       >;
     };
 
