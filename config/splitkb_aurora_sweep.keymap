@@ -18,6 +18,7 @@
 #define DPM 5
 #define CON 6
 #define SCH 7
+#define GAM 8
 
 &mt {
   tapping-term-ms = <170>;
@@ -80,11 +81,10 @@
 
     navigation_layer {
       bindings = <
-        &none   &none      &none    &kp C_VOL_UP &none                       &none   &kp PGUP &none  &none     &none
-        &to DPM &kp C_PREV &kp C_PP &kp C_NEXT   &none                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &to CON 
-        &none   &none      &kp LCTRL &kp C_VOL_DN &none
-        &none   &kp PGDN &none  &none     &none
-                                         &mo SYM &none                       &none &mo NUM
+        &none   &none      &none     &kp C_VOL_UP &none                         &none   &kp PGUP &none  &none     &none
+        &to DPM &kp C_PREV &kp C_PP  &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &to CON 
+        &none   &none      &kp LCTRL &kp C_VOL_DN &none                         &none   &kp PGDN &none  &none     &none
+                                            &mo SYM &none                       &none &mo NUM
       >; 
     };
 
@@ -112,6 +112,15 @@
         &none &none &none &none &none                       &none &none &none &none &none
         &none &none &none &none &none                       &none &none &none &none &none
                       &to DEF &to DEF                       &to DEF &to DEF
+      >;
+    };
+
+    gaming_layer {
+      bindings = <
+        &kp TAB   &kp BE_A &kp BE_Z &kp BE_E &kp BE_R                       &kp BE_T &kp BE_Y &kp BE_U &kp BE_I &kp BE_O 
+        &kp LSHFT &kp BE_Q &kp BE_S &kp BE_D &kp BE_F                       &kp BE_G &kp BE_H &kp BE_J &kp BE_K &kp BE_L 
+        &kp LCTRL &kp BE_W &kp BE_X &kp BE_C &kp BE_V                       &kp BE_B &kp BE_N &kp BE_COMM &kp BE_SCLN &to DEF
+                                    &kp ESC &kp SPACE                       &kp LALT &kp ENTER
       >;
     };
 
