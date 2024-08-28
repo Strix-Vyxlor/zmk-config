@@ -11,14 +11,13 @@
 #include "keymap_belgian.h"
 
 #define DEF 0
-#define AZT 1
-#define SYM 2
-#define NUM 3
-#define NAV 4
-#define DPM 5
-#define CON 6
-#define SCH 7
-#define GAM 8
+#define SYM 1
+#define NUM 2
+#define NAV 3
+#define DPM 4
+#define CON 4
+#define SCH 5
+#define GAM 6
 
 &mt {
   tapping-term-ms = <170>;
@@ -46,17 +45,7 @@
       bindings = <
         &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &kp LGUI
         &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
-        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &kp LALT &none &to AZT
-                           &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
-      >;
-    };
-
-
-    azerty_layer {
-      bindings = <
-        &kp BE_A &kp BE_Z &kp BE_E &kp BE_R &kp BE_T                       &kp BE_Y &kp BE_U    &kp BE_I    &kp BE_O    &kp BE_P
-        &kp BE_Q &kp BE_S &kp BE_D &kp BE_F &kp BE_G                       &kp BE_H &kp BE_J    &kp BE_K    &kp BE_L    &kp BE_M
-        &kp BE_W &kp BE_X &kp BE_C &kp BE_V &kp BE_B                       &kp BE_N &kp LGUI &kp LALT &none &to DEF
+        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &to AZT &none &kp LALT
                            &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
       >;
     };
@@ -65,7 +54,7 @@
       bindings = <
         &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
         &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_PLUS
-        &none       &kp BE_DLR  &kp BE_AT   &kp BE_AMPR &to SCH                         &udtd &kp BE_EXLM &kp BE_EQL &none             &none
+        &none       &kp BE_DLR  &kp BE_AT   &kp BE_AMPR &to SCH                         &udtd &kp BE_EXLM &kp BE_EQL &kp BE_QUES             &none
                                                       &mo SYM &none                       &none &mo NUM
       >;      
     };
