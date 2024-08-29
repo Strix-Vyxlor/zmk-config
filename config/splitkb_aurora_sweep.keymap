@@ -45,7 +45,7 @@
       bindings = <
         &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &kp LGUI
         &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
-        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &to AZT &none &kp LALT
+        &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &none &none &kp LALT
                            &lt SYM ESC &mt LSHFT SPC                       &mt LCTRL RET &mobs NUM 0
       >;
     };
