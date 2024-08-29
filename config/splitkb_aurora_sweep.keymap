@@ -15,9 +15,9 @@
 #define NUM 2
 #define NAV 3
 #define DPM 4
-#define CON 4
-#define SCH 5
-#define GAM 6
+#define CON 5
+#define SCH 6
+#define GAM 7
 
 &mt {
   tapping-term-ms = <170>;
