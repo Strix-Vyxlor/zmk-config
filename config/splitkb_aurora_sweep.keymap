@@ -18,6 +18,7 @@
 #define CON 5
 #define EXT 6
 #define GAM 7
+#define QWE 8
 
 &mt {
   tapping-term-ms = <170>;
@@ -70,7 +71,7 @@
 
     navigation_layer {
       bindings = <
-        &none   &none      &kp LALT     &kp C_VOL_UP &none                         &none   &kp PGUP &none  &none     &to CON
+        &none   &none      &kp LALT     &kp C_VOL_UP &to QWE                         &none   &kp PGUP &none  &none     &to CON
         &to DPM &kp C_PREV &kp C_PP  &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LCTRL 
         &none   &none      &none  &kp C_VOL_DN &none                         &none   &kp PGDN &none  &none     &none
                                             &mo SYM &none                       &none &mo NUM
@@ -112,6 +113,16 @@
                                    &kp ESC &kp SPACE                        &kp LALT &mo SYM
       >;
     };
+
+    qwerty_layer {
+      bindings = <
+        &kp TAB   &kp BE_Q &kp BE_W &kp BE_E &kp BE_R                       &kp BE_T &kp BE_Y &kp BE_U &kp BE_I &kp BE_O 
+        &kp LSHFT &kp BE_A &kp BE_S &kp BE_D &kp BE_F                       &kp BE_G &kp BE_H &kp BE_J &kp BE_K &kp BE_SCLN 
+        &kp LCTRL &kp BE_Z &kp BE_X &kp BE_C &kp BE_V                       &kp BE_B &kp BE_N &kp BE_M &kp BE_COMM &to DEF
+                                   &kp ESC &kp SPACE                        &kp LALT &mo SYM
+      >;
+    };
+
 
     blank_layer {
       bindings = <
