@@ -174,7 +174,7 @@
         <&macro_tap &kp BE_AGRV>,
         <&macro_tap &kp BE_DQUO>,
         <&macro_tap &kp BE_CCED>,
-        <&macro_tap &kp BE_QUOT>
+        <&macro_tap &kp BE_QUOT>,
         <&macro_tap &kp RET>;
     };
 
