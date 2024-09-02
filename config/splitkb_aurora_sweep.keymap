@@ -175,7 +175,7 @@
         <&macro_tap &kp BE_DQUO>,
         <&macro_tap &kp BE_CCED>,
         <&macro_tap &kp BE_QUOT>;
-    }
+    };
 
     hws: hyprland_workspace_switch {
       compatible = "zmk,behavior-macro-one-param";
