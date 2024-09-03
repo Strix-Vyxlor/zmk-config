@@ -99,7 +99,7 @@
     extra_symbol_layer {
       bindings = <
         &none &none &none &delta &none                       &none &none &none &none &none
-        &none &none &kp BE_CCED &kp BE_EACU &none                       &none &kp BE_EGRV &kp BE_AGRV &none &none
+        &none &etre &kp BE_CCED &kp BE_EACU &none                       &none &kp BE_EGRV &kp BE_AGRV &none &none
         &none &none &none &none &none                       &udgr &none &none &none &none
                       &to DEF &to DEF                       &mo EXT &to DEF
       >;
@@ -157,6 +157,14 @@
       wait-ms = <40>;
       tap-ms = <40>;
       bindings = <&kp BE_GRV>, <&kp SPACE>;
+    };
+
+    etre: e-trema {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <40>;
+      tap-ms = <40>;
+      bindings = <&kp BE_DIAE>, <&kp BE_E>;
     };
 
     delta: delta {
