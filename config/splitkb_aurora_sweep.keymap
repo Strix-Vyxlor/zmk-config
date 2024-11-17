@@ -121,7 +121,7 @@
         &kp CAPS &kp BE_LPRN &kp BE_SECT  &kp BE_EGRV &kp BE_EXLM                       &none &none &none &none &none
         &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT                        &none &none &none &none &none
         &kp LCTRL &kp BE_CCED &kp BE_AGRV &none &none                       &none &none &none &none &none
-                          &mo QWA &none                       &none &none
+                          &mo QAA &none                       &none &none
       >;
     };
 
