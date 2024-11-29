@@ -261,5 +261,5 @@
     #binding-cells = <2>;
     binding-cells = <&kp>, <&kp>;
     mods = <RALT>;
-  }
+  };
 };
