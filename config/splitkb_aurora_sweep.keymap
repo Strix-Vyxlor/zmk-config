@@ -259,7 +259,7 @@
   mr: mod_morph_r_alt{
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    binding-cells = <&kp>, <&kp>;
+    bindings = <&kp>,<&kp>;
     mods = <RALT>;
   };
 };
