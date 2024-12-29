@@ -118,9 +118,9 @@
 
     gaming_alt_layer {
       bindings = <
-        &kp CAPS &kp BE_LPRN &kp BE_SECT  &kp BE_EGRV &kp BE_EXLM                       &none &none &none &none &none
-        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT                        &none &none &none &none &none
-        &kp LCTRL &kp BE_CCED &kp BE_AGRV &none &none                       &none &none &none &none &none
+        &kp CAPS &kp BE_LPRN &kp BE_SECT  &kp BE_EGRV &kp BE_EXLM           &kp F5 &kp F6 &kp F7 &kp F8 &none
+        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT           &kp F1 &kp F2 &kp F3 &kp F4 &none
+        &kp LCTRL &kp BE_CCED &kp BE_AGRV &none &none                       &kp F9 &kp F10 &kp F11 &kp F12 &none
                           &mo GAA &none                       &none &none
       >;
     };
@@ -136,9 +136,9 @@
 
     querty_alt_layer {
       bindings = <
-        &kp CAPS &kp BE_5 &kp BE_6  &kp BE_7 &kp BE_8                      &none &none &none &none &none
-        &kp LSHFT &kp BE_1 &kp BE_2 &kp BE_3 &kp BE_4                        &none &none &none &none &none
-        &kp LCTRL &kp BE_9 &kp BE_0 &none &none                       &none &none &none &none &none
+        &kp CAPS &kp BE_5 &kp BE_6  &kp BE_7 &kp BE_8         &kp F5 &kp F6 &kp F7 &kp F8 &none
+        &kp LSHFT &kp BE_1 &kp BE_2 &kp BE_3 &kp BE_4         &kp F1 &kp F2 &kp F3 &kp F4 &none
+        &kp LCTRL &kp BE_9 &kp BE_0 &none &none               &kp F9 &kp F10 &kp F11 &kp F12 &none
                           &mo QWA &none                       &none &none
       >;
     };
