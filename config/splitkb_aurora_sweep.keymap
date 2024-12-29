@@ -55,9 +55,9 @@
 
     symbol_layer {
       bindings = <
-        &mr BE_LABK F5 &mr BE_LBRC F6  &mr BE_LCBR F7  &mr BE_LPRN F8  &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
-        &mr BE_SLSH F1 &mr BE_SCLN F2  &mr BE_UNDS F3  &mr BE_DOT  F4  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_BSLS
-        &mr BE_DIAE F9 &mr BE_DLR  F10 &mr BE_AT   F11 &mr BE_AMPR F12 &to EXT                        &udtd &kp BE_EXLM &kp BE_EQL &kp BE_QUES             &kp RALT
+        &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
+        &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_BSLS
+        &none       &kp BE_DLR  &kp BE_AT   &kp BE_AMPR &to EXT                        &udtd &kp BE_EXLM &kp BE_EQL &kp BE_QUES             &none
                                                       &mo SYM &none                       &mo EXT &mo NUM
       >;      
     };
@@ -118,9 +118,9 @@
 
     gaming_alt_layer {
       bindings = <
-        &kp CAPS &kp BE_LPRN &kp BE_SECT  &kp BE_EGRV &kp BE_EXLM           &kp F1 &kp F2 &kp F3 &kp F4 &none
-        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT           &kp F5 &kp F6 &kp F7 &kp F8 &none
-        &kp LCTRL &kp BE_CCED &kp BE_AGRV &none &none                       &kp F9 &kp F10 &kp F11 &kp F12 &none
+        &kp CAPS &kp BE_LPRN &kp BE_SECT  &kp BE_EGRV &kp BE_EXLM                       &none &none &none &none &none
+        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT                        &none &none &none &none &none
+        &kp LCTRL &kp BE_CCED &kp BE_AGRV &none &none                       &none &none &none &none &none
                           &mo GAA &none                       &none &none
       >;
     };
@@ -255,11 +255,4 @@
     bindings = <&mo>, <&bsdl>;
     tapping-term-ms = <170>;
   };
-
-  mr: mod_morph_r_alt{
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    binding-cells = <&kp>, <&kp>;
-    mods = <RALT>;
-  }
 };
