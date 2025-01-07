@@ -17,7 +17,7 @@
 #define DPM 4  // displaymanager
 #define CON 5  // device control
 #define EXT 6  // extra symbol
-#define FFF 7
+#define FFF 7  // my F keys
 #define GAM 8  // game (azerty)
 #define GAA 9  // game alt
 #define QWE 10  // game1 (querty)
@@ -48,7 +48,7 @@
     default_layer {
       bindings = <
         &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &none
-        &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
+        &hl LGUI BE_A &hl LALT BE_R &hl LSHFT BE_S &hl LCTRL BE_T &kp BE_G                       &kp BE_M &hr LCTRL BE_N &hr LSHFT BE_E &hr LALT BE_I &hr LGUI BE_O
         &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &none &none &kp RALT
                            &lt SYM ESC &lt EXT SPC                       &lt DPM RET &mobs NUM 0
       >;
@@ -265,12 +265,31 @@
       bindings = <&kp BSPC>, <&kp DEL>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    mobs: momentary_layer_bspc_del {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      bindings = <&mo>, <&bsdl>;
+      tapping-term-ms = <170>;
+    };
+    hl: home_mod_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <6 7 8 9 10 16 17 18 19 20 26 27 28 29 30 33 34>;    // <---[[right-hand keys]]
+    };
+    hr: home_mod_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+      quick-tap-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <1 2 3 4 5 11 12 11 14 15 21 22 23 24 25 31 32>;    // <---[[right-hand keys]]
+    };
   };
 
-  mobs: momentary_layer_bspc_del {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&mo>, <&bsdl>;
-    tapping-term-ms = <170>;
-  };
+  
 };
