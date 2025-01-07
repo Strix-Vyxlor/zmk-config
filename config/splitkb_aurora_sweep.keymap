@@ -23,7 +23,7 @@
 #define QWA 10 // game1 alt
 
 &mt {
-  tapping-term-ms = <400>;
+  tapping-term-ms = <500>;
 };
 
 &lt {
@@ -49,7 +49,7 @@
         &kp BE_Q &kp BE_W &kp BE_F &kp BE_P &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U &kp BE_Y &none
         &mt LGUI BE_A &mt LALT BE_R &mt LSHFT BE_S &mt LCTRL BE_T &kp BE_G                       &kp BE_M &mt LCTRL BE_N &mt LSHFT BE_E &mt LALT BE_I &mt LGUI BE_O
         &kp BE_Z &kp BE_X &kp BE_C &kp BE_D &kp BE_V                       &kp BE_K &kp BE_H &none &none &kp RALT
-                           &lt SYM ESC &lt EXT SPC                       &kp RET &mobs NUM 0
+                           &lt SYM ESC &lt EXT SPC                       &lt DPM RET &mobs NUM 0
       >;
     };
 
