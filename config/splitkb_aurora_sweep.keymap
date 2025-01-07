@@ -23,7 +23,7 @@
 #define QWA 10 // game1 alt
 
 &mt {
-  tapping-term-ms = <200>;
+  tapping-term-ms = <220>;
 };
 
 &lt {
