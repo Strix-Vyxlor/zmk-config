@@ -17,13 +17,14 @@
 #define DPM 4  // displaymanager
 #define CON 5  // device control
 #define EXT 6  // extra symbol
-#define GAM 7  // game (azerty)
-#define GAA 8  // game alt
-#define QWE 9  // game1 (querty)
-#define QWA 10 // game1 alt
+#define FFF 7
+#define GAM 8  // game (azerty)
+#define GAA 9  // game alt
+#define QWE 10  // game1 (querty)
+#define QWA 11 // game1 alt
 
 &mt {
-  tapping-term-ms = <500>;
+  tapping-term-ms = <600>;
 };
 
 &lt {
@@ -107,6 +108,15 @@
       >;
     };
 
+    f_layer {
+      bindings = <
+        &kp F5 &kp F6  &kp F7  &kp F8  &none                       &none &kp F17 &kp F18  &kp F19  &kp F20
+        &kp F1 &kp F2  &kp F3  &kp F4  &none                       &none &kp F13 &kp F14  &kp F15  &kp F16
+        &kp F9 &kp F10 &kp F11 &kp F12 &none                       &none &kp F21 &kp F22  &kp F23  &kp F24
+                          &none &mo EXT                       &mo DPM &none
+      >;
+    };
+
     gaming_layer {
       bindings = <
         &kp TAB   &kp BE_A &kp BE_Z &kp BE_E &kp BE_R                       &kp BE_T &kp BE_Y &kp BE_U &kp BE_I &kp BE_O 
@@ -158,6 +168,10 @@
     navigation_layer {
       if-layers = <SYM NUM>;
       then-layer = <NAV>;
+    };
+    f_layer {
+      if-layers = <EXT DPM>;
+      then-layer = <FFF>;
     };
   };
 
