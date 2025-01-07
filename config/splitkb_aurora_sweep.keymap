@@ -86,7 +86,7 @@
         &hww N1 &hww N2 &hww N3 &hww N4 &none                       &none &hww N5 &hww N6 &hww N7 &hww N8 
         &hws N1 &hws N2 &hws N3 &hws N4 &none                       &none &hws N5 &hws N6 &hws N7 &hws N8
         &none   &none   &none   &none   &none                       &none &none   &none   &none   &none
-                              &to DEF &to DEF                       &to DEF &to DEF
+                              &to DEF &mo EXT                       &mo DPM &to DEF
       >;
     };
 
