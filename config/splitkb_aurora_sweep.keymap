@@ -34,7 +34,7 @@
 &sk {
   lazy;
   quick-release;
-}
+};
 
 / {
 
