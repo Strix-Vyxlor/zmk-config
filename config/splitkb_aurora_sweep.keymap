@@ -31,6 +31,11 @@
   tapping-term-ms = <170>;
 };
 
+&sk {
+  lazy;
+  quick-release;
+}
+
 / {
 
   chosen {
@@ -44,11 +49,10 @@
   keymap {
     compatible = "zmk,keymap";
 
-
     default_layer {
       bindings = <
         &kp BE_Q      &kp BE_W      &kp BE_F       &kp BE_P       &kp BE_B                       &kp BE_J &kp BE_L       &kp BE_U       &kp BE_Y      &none
-        &hrl LGUI BE_A &hrl LALT BE_R &hrl LSHFT BE_S &hrl LCTRL BE_T &kp BE_G                       &kp BE_M &hrr LCTRL BE_N &hrr LSHFT BE_E &hrr LALT BE_I &hrr LGUI BE_O
+        &kp BE_A &kp BE_R &kp BE_S &kp BE_T &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E &kp BE_I &kp BE_O
         &kp BE_Z      &kp BE_X      &kp BE_C       &kp BE_D       &kp BE_V                       &kp BE_K &kp BE_H       &none          &none         &kp RALT
                                                    &lt SYM ESC &lt EXT SPC                       &lt DPM RET &mobs NUM 0
       >;
@@ -111,7 +115,7 @@
     f_layer {
       bindings = <
         &kp F5 &kp F6  &kp F7  &kp F8  &none                       &none &kp F17 &kp F18  &kp F19  &kp F20
-        &kp F1 &kp F2  &kp F3  &kp F4  &none                       &none &kp F13 &kp F14  &kp F15  &kp F16
+        &kp F1 &kp F2  &kp F3  &kp F4  &kp LC(LALT)                       &kp LC(LALT) &kp F13 &kp F14  &kp F15  &kp F16
         &kp F9 &kp F10 &kp F11 &kp F12 &none                       &none &kp F21 &kp F22  &kp F23  &kp F24
                                &none &mo EXT                       &mo DPM &none
       >;
@@ -275,7 +279,7 @@
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-unless-interrupted";
-      tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+      tapping-term-ms = <70>;                        // <---[[produces tap if held longer than tapping-term-ms]]
       quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;    // <---[[right-hand keys]]
@@ -284,12 +288,68 @@
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-unless-interrupted";
-      tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+      tapping-term-ms = <70>;                        // <---[[produces tap if held longer than tapping-term-ms]]
       quick-tap-ms = <200>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;    // <---[[left-handkeys]]
     };
   };
-
+  combos {
+    compatible = "zmk,combos";
+      combo_lshift {
+        timeout-ms = <50>;
+        key-positions = <12 13>;
+        bindings = <&sk LSHFT>;
+        layers = <DEF>;
+      };
+      combo_rshift {
+        timeout-ms = <50>;
+        key-positions = <16 17>;
+        bindings = <&sk LSHFT>;
+        layers = <DEF>;
+      };
+      combo_lcontol {
+        timeout-ms = <50>;
+        key-positions = <11 12>;
+        bindings = <&sk LCTRL>;
+        layers = <DEF>;
+      };
+      combo_rcontrol {
+        timeout-ms = <50>;
+        key-positions = <17 18>;
+        bindings = <&sk LCTRL>;
+        layers = <DEF>;
+      };
+      combo_lalt {
+        timeout-ms = <50>;
+        key-positions = <11 13>;
+        bindings = <&sk LALT>;
+        layers = <DEF>;
+      };
+      combo_ralt {
+        timeout-ms = <50>;
+        key-positions = <16 18>;
+        bindings = <&sk LALT>;
+        layers = <DEF>;
+      };
+      combo_lgui {
+        timeout-ms = <50>;
+        key-positions = <11 12 13>;
+        bindings = <&sk LGUI>;
+        layers = <DEF>;
+      };
+      combo_rgui {
+        timeout-ms = <50>;
+        key-positions = <16 17 18>;
+        bindings = <&sk LGUI>;
+        layers = <DEF>;
+      };
+      combo_caps {
+        timeout-ms = <50>;
+        key-positions = <14 15>;
+        bindings = <&kp CAPS>;
+        layers = <DEF>;
+      };
+  };
   
 };
