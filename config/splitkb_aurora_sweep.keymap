@@ -79,8 +79,8 @@
     navigation_layer {
       bindings = <
         &none   &none      &kp LALT &kp C_VOL_UP &to QWE                       &none    &kp PGUP &none  &none     &to CON
-        &to DPM &kp C_PREV &kp C_PP &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LCTRL 
-        &none   &none      &none    &kp C_VOL_DN &none                         &none    &kp PGDN &none  &none     &none
+        &kp LGUI &kp C_PREV &kp C_PP &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LCTRL 
+        &none   &none      &none    &kp C_VOL_DN &none                         &none    &kp PGDN &none  &none     &kp LALT
                                            &mo SYM &none                       &none &mo NUM
       >; 
     };
