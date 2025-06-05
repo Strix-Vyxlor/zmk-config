@@ -132,9 +132,9 @@
 
     gaming_alt_layer {
       bindings = <
-        &kp CAPS  &kp BE_LPRN &kp BE_SECT &kp BE_EGRV &kp BE_EXLM                       &kp F5 &kp F6  &kp F7  &kp F8  &none
-        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_QUOT                       &kp F1 &kp F2  &kp F3  &kp F4  &none
-        &kp LCTRL &kp BE_CCED &kp BE_AGRV &none       &none                             &kp F9 &kp F10 &kp F11 &kp F12 &none
+        &kp CAPS  &kp BE_QUOT &kp BE_LPRN &kp BE_SECT &none                       &kp F5 &kp F6  &kp F7  &kp F8  &none
+        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_AGRV                       &kp F1 &kp F2  &kp F3  &kp F4  &none
+        &kp LCTRL &kp BE_EXLM &kp BE_EGRV &kp BE_CCED       &none                             &kp F9 &kp F10 &kp F11 &kp F12 &none
                                                     &mo GAA &none                       &none &none
       >;
     };
