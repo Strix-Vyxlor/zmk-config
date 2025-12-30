@@ -17,11 +17,9 @@
 #define DPM 4  // displaymanager
 #define CON 5  // device control
 #define EXT 6  // extra symbol
-#define FFF 7  // my F keys
+#define FFF 7  // many F keys
 #define GAM 8  // game (azerty)
 #define GAA 9  // game alt
-#define QWE 10  // game1 (querty)
-#define QWA 11 // game1 alt
 
 &mt {
   tapping-term-ms = <170>;
@@ -45,6 +43,7 @@
   vbatt: vbatt {
     compatible = "zmk,battery-nrf-vddh";
   };
+
 
   keymap {
     compatible = "zmk,keymap";
@@ -78,7 +77,7 @@
 
     navigation_layer {
       bindings = <
-        &none   &none      &kp LALT &kp C_VOL_UP &to QWE                       &none    &kp PGUP &none  &none     &to CON
+        &none   &none      &kp LALT &kp C_VOL_UP &none                        &none    &kp PGUP &none  &none     &to CON
         &kp LGUI &kp C_PREV &kp C_PP &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LCTRL 
         &none   &none      &none    &kp C_VOL_DN &none                         &none    &kp PGDN &none  &none     &kp LALT
                                            &mo SYM &none                       &none &mo NUM
@@ -87,10 +86,10 @@
 
     hyprland_layer {
       bindings = <
-        &hww N1 &hww N2 &hww N3 &hww N4 &none                       &none &hww N5 &hww N6 &hww N7 &hww N8 
-        &hws N1 &hws N2 &hws N3 &hws N4 &none                       &none &hws N5 &hws N6 &hws N7 &hws N8
-        &none   &none   &none   &none   &none                       &none &none   &none   &none   &none
-                              &mo SYM &mo EXT                       &mo DPM &to DEF
+        &hww N1 &hww N2 &hww N3 &hww N4 &hww N5                       &hww N6 &hww N7 &hww N8 &hww N9 &hww N0 
+        &hws N1 &hws N2 &hws N3 &hws N4 &hw3 N5                       &hws N6 &hws N7 &hws N8 &hws N9 &hws N0
+        &none   &none   &none   &none   &none                         &none   &none   &none   &none   &none
+                                &mo SYM &mo EXT                       &mo DPM &to DEF
       >;
     };
 
@@ -139,23 +138,6 @@
       >;
     };
 
-    qwerty_layer {
-      bindings = <
-        &kp TAB   &kp BE_Q &kp BE_W &kp BE_E &kp BE_R                        &kp BE_T &kp BE_Y &kp BE_U &kp BE_I    &kp BE_O 
-        &kp LSHFT &kp BE_A &kp BE_S &kp BE_D &kp BE_F                        &kp BE_G &kp BE_H &kp BE_J &kp BE_K    &kp BE_SCLN 
-        &kp LCTRL &kp BE_Z &kp BE_X &kp BE_C &kp BE_V                        &kp BE_B &kp BE_N &kp BE_M &kp BE_COMM &to DEF
-                                &lt QWA ESC &kp SPACE                        &kp LALT &mo SYM
-      >;
-    };
-
-    querty_alt_layer {
-      bindings = <
-        &kp CAPS  &kp BE_5 &kp BE_6 &kp BE_7 &kp BE_8                       &kp F5 &kp F6  &kp F7  &kp F8  &none
-        &kp LSHFT &kp BE_1 &kp BE_2 &kp BE_3 &kp BE_4                       &kp F1 &kp F2  &kp F3  &kp F4  &none
-        &kp LCTRL &kp BE_9 &kp BE_0 &none    &none                          &kp F9 &kp F10 &kp F11 &kp F12 &none
-                                        &mo QWA &none                       &none &none
-      >;
-    };
 
     blank_layer {
       bindings = <
