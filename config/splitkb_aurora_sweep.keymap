@@ -8,31 +8,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 #include "keymap_belgian.h"
 
-#define DEF 0  // default
-#define SYM 1  // symbol
-#define NUM 2  // number
-#define NAV 3  // navigation
-#define DPM 4  // displaymanager
-#define CON 5  // device control
-#define EXT 6  // extra symbol
-#define FFF 7  // many F keys
-#define GAM 8  // game (azerty)
-#define GAA 9  // game alt
+#define AL1 0  // alpha1
+#define AL2 1  // alpha2
+#define ALU 2  // alpha2 capitalized
+#define NUM 3  // number
+#define SM1 4  // symbol 1
+#define SM2 5  // symbol 2
+#define SYS 6  // system layer
 
 &mt {
-  tapping-term-ms = <170>;
-};
-
-&lt {
-  tapping-term-ms = <170>;
-};
-
+    tapping-term-ms = <201>;
+    flavor = "tap-preferred";
+ };
 &sk {
-  lazy;
-  quick-release;
-};
+     release-after-ms = <2000>;
+     quick-release;
+ };
 
 / {
 
@@ -48,97 +42,67 @@
   keymap {
     compatible = "zmk,keymap";
 
-    default_layer {
+    alpha1 {
       bindings = <
-        &kp BE_Q      &kp BE_W      &kp BE_F       &kp BE_P       &kp BE_B                       &kp BE_J &kp BE_L &kp BE_U    &kp BE_Y &key_repeat
-        &kp BE_A      &kp BE_R      &kp BE_S       &kp BE_T       &kp BE_G                       &kp BE_M &kp BE_N &kp BE_E    &kp BE_I &kp BE_O
-        &kp BE_Z      &kp BE_X      &kp BE_C       &kp BE_D       &kp BE_V                       &kp BE_K &kp BE_H &key_repeat &none    &kp RALT
-                                                   &lt SYM ESC &lt EXT SPC                       &lt DPM RET &mobs NUM 0
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D &none                       &none &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C &none
+        &hl_l NUM BE_A &hl_l SM2 BE_R &hl_l SM1 BE_S &hl_l SYS BE_T &none                       &none &hl_r SYS BE_N &hl_r SM1 BE_E &hl_r SM2 BE_I &hl_r NUM BE_O
+                          &kp SPC &none                       &none &alpha2macro
       >;
     };
 
-    symbol_layer {
+    alpha2 {
       bindings = <
-        &kp BE_LABK &kp BE_LBRC &kp BE_LCBR &kp BE_LPRN &kp BE_HASH                       &kp BE_PIPE &kp BE_RPRN &kp BE_RCBR &kp BE_RBRC &kp BE_RABK
-        &kp BE_SLSH &kp BE_SCLN &kp BE_UNDS &kp BE_DOT  &kp BE_DQUO                       &kp BE_QUOT &kp BE_COMM &kp BE_MINS &kp BE_COLN &kp BE_BSLS
-        &none       &kp BE_DLR  &kp BE_AT   &kp BE_AMPR &to EXT                           &udtd       &kp BE_EXLM &kp BE_EQL  &kp BE_QUES &none
-                                                      &mo SYM &none                       &mo DPM &mo NUM
-      >;      
-    };
-
-    number_layer {
-      bindings = <
-        &none    &kp BE_PERC &kp BE_MINS &kp BE_PLUS &none                          &kp BE_COLN &kp BE_ASTR &kp BE_SLSH &kp BE_CIRC &none
-        &kp BE_1 &kp BE_2    &kp BE_3    &kp BE_4    &kp BE_5                       &kp BE_6    &kp BE_7    &kp BE_8    &kp BE_9    &kp BE_0
-        &none    &none       &none       &kp LSHFT   &none                          &none       &kp LSHFT   &none       &none       &none
-                                              &mo SYM &kp TAB                       &none &mo NUM
-      >; 
-    };
-
-    navigation_layer {
-      bindings = <
-        &none   &none      &kp LALT &kp C_VOL_UP &none                        &none    &kp PGUP &none  &none     &to CON
-        &kp LGUI &kp C_PREV &kp C_PP &kp C_NEXT   &to GAM                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LCTRL 
-        &none   &none      &none    &kp C_VOL_DN &none                         &none    &kp PGDN &none  &none     &kp LALT
-                                           &mo SYM &none                       &none &mo NUM
-      >; 
-    };
-
-    hyprland_layer {
-      bindings = <
-        &hww N1 &hww N2 &hww N3 &hww N4 &hww N5                       &hww N6 &hww N7 &hww N8 &hww N9 &hww N0 
-        &hws N1 &hws N2 &hws N3 &hws N4 &hws N5                       &hws N6 &hws N7 &hws N8 &hws N9 &hws N0
-        &none   &none   &none   &none   &none                         &none   &none   &none   &none   &none
-                                &mo SYM &mo EXT                       &mo DPM &to DEF
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &kp BE_J &kp BE_Q &kp BE_W &none                       &none &kp BE_V &kp BE_QUOT  &kp BE_Z &none
+        &kp BE_X &kp BE_P &kp BE_B &kp BE_K &none                       &none &kp BE_M &kp BE_DOT &kp BE_F &kp BE_Y
+                          &sk LSHIFT &none                       &none &sl ALU
       >;
-    };
 
-    control_layer {
-      bindings = <
-        &bootloader   &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &sys_reset                          &sys_reset &out OUT_BLE &none &none &bootloader 
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none      &out OUT_TOG &none &none &none
-        &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4                       &none      &out OUT_USB &none &none &none
-                                                              &mo SYM &none                       &mo DPM &to DEF
-      >;
     };
-
-    extra_symbol_layer {
+    alpha2caps {
       bindings = <
-        &none &none &none       &delta      &none                       &none &none       &none       &none &none
-        &none &etre &kp BE_CCED &kp BE_EACU &none                       &none &kp BE_EGRV &kp BE_AGRV &ehat &none
-        &none &none &none       &none       &none                       &udgr &none       &none       &none &none
-                                  &to DEF &mo EXT                       &mo DPM &to DEF
-      >;
-    };
-
-    f_layer {
-      bindings = <
-        &kp F5 &kp F6  &kp F7  &kp F8  &none                       &none &kp F17 &kp F18  &kp F19  &kp F20
-        &kp F1 &kp F2  &kp F3  &kp F4  &kp LC(LALT)                       &kp LC(LALT) &kp F13 &kp F14  &kp F15  &kp F16
-        &kp F9 &kp F10 &kp F11 &kp F12 &none                       &none &kp F21 &kp F22  &kp F23  &kp F24
-                               &none &mo EXT                       &mo DPM &none
-      >;
-    };
-
-    gaming_layer {
-      bindings = <
-        &kp TAB   &kp BE_A &kp BE_Z &kp BE_E &kp BE_R                       &kp BE_T &kp BE_Y &kp BE_U &kp BE_I &kp BE_O 
-        &kp LSHFT &kp BE_Q &kp BE_S &kp BE_D &kp BE_F                       &kp BE_G &kp BE_H &kp BE_J &kp BE_K &kp BE_L 
-        &kp LCTRL &kp BE_W &kp BE_X &kp BE_C &kp BE_V                       &kp BE_B &kp BE_N &kp BE_COMM &kp BE_SCLN &to DEF
-                               &lt GAA ESC &kp SPACE                        &kp LALT &mo SYM
-      >;
-    };
-
-    gaming_alt_layer {
-      bindings = <
-        &kp CAPS  &kp BE_QUOT &kp BE_LPRN &kp BE_SECT &none                       &kp F5 &kp F6  &kp F7  &kp F8  &none
-        &kp LSHFT &kp BE_AMPR &kp BE_EACU &kp BE_DQUO &kp BE_AGRV                       &kp F1 &kp F2  &kp F3  &kp F4  &none
-        &kp LCTRL &kp BE_EXLM &kp BE_EGRV &kp BE_CCED       &none                             &kp F9 &kp F10 &kp F11 &kp F12 &none
-                                                    &mo GAA &none                       &none &none
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &kp LS(BE_W) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &none  &kp LS(BE_Z) &none
+        &kp LS(BE_X) &kp LS(BE_P) &kp LS(BE_B) &kp LS(BE_K) &none                       &none &kp LS(BE_M) &kp BE_COMMA &kp LS(BE_F) &kp LS(BE_Y)
+                          &trans &none                       &none &none
       >;
     };
 
 
+    number {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &hm_l LALT DOT &hm_l LCTRL BE_N1 &hm_l LGUI BE_N2 &none                       &none &hm_r RGUI BE_N3 &hm_r RCTRL BE_N4 &hm_r RALT BE_N5 &none
+        &kp BE_MINUS &kp BE_PLUS &kp BE_N6 &kp BE_N7 &none                       &none &kp BE_N8 &kp BE_N9 &kp BE_N0 &kp BE_EQUAL
+                          &sr LSHIFT AL1 &none                       &none &kp GUI
+      >;
+    };
+
+    symbol1 {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &kp BE_MINUS &kp BE_LPRN &kp BE_RPRN &none                       &none &td BE_QUOT BE_DQUO &td BE_QUES BE_EXLM &kp BE_PERC &none
+        &kp BE_ASTR &kp BE_UNDS &kp BE_LCBR &kp BE_RCBR &none                       &none &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
+                          &trans &none                       &none &trans
+      >;
+    };
+    symbol2 {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &td BE_EGRV BE_EACU &kp BE_LABK &kp BE_RABK &none                       &none &kp BE_HASH &kp BE_AMPR &kp BE_AT &none
+        &etre &td BE_CCED BE_AGRV &kp BE_LBRC &kp BE_RBRC &none                       &none &kp BE_PIPE &kp BE_DLR &udtd 0 0 &none
+                          &trans &none                       &none &trans
+      >;
+    };
+    system {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &kp ESC &none &none &none                       &none &td LC(BE_V) LC(BE_C) &kp UP &kp BSPC &none
+        &kp TAB &td HOME DEL &kp PG_DN &kp PG_UP &none                       &none &kp LEFT &kp DOWN &kp RIGHT &kp RET
+                          &sr LSHIFT AL1 &none                       &none &none
+      >;
+    };
     blank_layer {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
@@ -147,25 +111,26 @@
                           &none &none                       &none &none
       >;
     };
+
   };
 
   conditional_layers {
     compatible = "zmk,conditional-layers";
-    navigation_layer {
-      if-layers = <SYM NUM>;
-      then-layer = <NAV>;
-    };
-    f_layer {
-      if-layers = <EXT DPM>;
-      then-layer = <FFF>;
-    };
-    control_layer {
-      if-layers = <SYM DPM>;
-      then-layer = <CON>;
-    };
   };
 
   macros {
+    alpha2macro: behavior_macro_1 {
+      compatible = "zmk,behavior-macro";
+      label = "MACRO1";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &sl AL2 >;
+    };
+    caps_alpha2macro: behavior_macro_2 {
+      compatible = "zmk,behavior-macro";
+      label = "MACRO2";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &sl ALU >;
+    };
     udtd: undead_tilda {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -189,139 +154,110 @@
       tap-ms = <40>;
       bindings = <&kp BE_DIAE>, <&kp BE_E>;
     };
-
-    ehat: e-hat {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      wait-ms = <40>;
-      tap-ms = <40>;
-      bindings = <&kp BE_DCIR>, <&kp BE_E>;
-    };
-
-    delta: delta {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      wait-ms = <40>;
-      tap-ms = <40>;
-      bindings =
-        <&macro_press &kp LCTRL>,
-        <&macro_press &kp LSHFT>,
-        <&macro_tap &kp BE_U>,
-        <&macro_release &kp LSHFT>,
-        <&macro_release &kp LCTRL>,
-
-        <&macro_tap &kp BE_AGRV>,
-        <&macro_tap &kp BE_DQUO>,
-        <&macro_tap &kp BE_CCED>,
-        <&macro_tap &kp BE_QUOT>,
-        <&macro_tap &kp RET>;
-    };
-
-    hws: hyprland_workspace_switch {
-      compatible = "zmk,behavior-macro-one-param";
-      wait-ms = <40>;
-      tap-ms = <40>;
-      #binding-cells = <1>;
-      bindings = 
-        <&macro_press &kp LGUI>,
-        <&macro_param_1to1>,
-        <&macro_tap &kp 0>,
-        <&macro_release &kp LGUI>;
-    };
-
-    hww: hyprland_window_to_workspace {
-      compatible = "zmk,behavior-macro-one-param";
-      wait-ms = <40>;
-      tap-ms = <40>;
-      #binding-cells = <1>;
-      bindings = 
-        <&macro_press &kp LGUI>,
-        <&macro_press &kp LSHFT>,
-        <&macro_param_1to1>,
-        <&macro_tap &kp 0>,
-        <&macro_release &kp LSHFT>,
-        <&macro_release &kp LGUI>;
-    };
   };
 
   behaviors {
-    bsdl: backspace_delete {        
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp BSPC>, <&kp DEL>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    mobs: momentary_layer_bspc_del {
+    hm_l: homerow_mods_left {
       compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_L";
       #binding-cells = <2>;
-      bindings = <&mo>, <&bsdl>;
-      tapping-term-ms = <170>;
-    };
-    cm: combo_mod {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
+      tapping-term-ms = <300>;
+      quick-tap-ms = <250>;
       flavor = "tap-preferred";
-      tapping-term-ms = <170>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-      quick-tap-ms = <200>;
-      bindings = <&kp>, <&sk>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_r: homerow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_R";
+      #binding-cells = <2>;
+      tapping-term-ms = <300>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    sr: shift_layer {
+      compatible = "zmk,behavior-hold-tap";
+      label = "SHIFT_LAYER";
+      #binding-cells = <2>;
+      tapping-term-ms = <300>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&to>;
+      retro-tap;
+    };
+    hl_l: homerow_layers_left {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_LAYERS_L";
+      #binding-cells = <2>;
+      tapping-term-ms = <220>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+    hl_r: homerow_layers_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_LAYERS_R";
+      #binding-cells = <2>;
+      tapping-term-ms = <220>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+    td: tapdance {
+      compatible = "zmk,behavior-hold-tap";
+      label = "TAPDANCE";
+      #binding-cells = <2>;
+      tapping-term-ms = <190>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
     }; 
+    untd: undead_tapdance {
+      compatible = "zmk,behavior-hold-tap";
+      label = "TAPDANCE";
+      #binding-cells = <2>;
+      tapping-term-ms = <190>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&udgr>, <&udtd>;
+    };
   };
   combos {
     compatible = "zmk,combos";
-      combo_lshift {
-        timeout-ms = <50>;
-        key-positions = <12 13>;
-        bindings = <&cm LSHFT LSHFT>;
-        layers = <DEF>;
-      };
-      combo_rshift {
-        timeout-ms = <50>;
-        key-positions = <16 17>;
-        bindings = <&cm LSHFT LSHFT>;
-        layers = <DEF>;
-      };
-      combo_lcontol {
-        timeout-ms = <50>;
-        key-positions = <11 12>;
-        bindings = <&cm LCTRL LCTRL>;
-        layers = <DEF>;
-      };
-      combo_rcontrol {
-        timeout-ms = <50>;
-        key-positions = <17 18>;
-        bindings = <&cm LCTRL LCTRL>;
-        layers = <DEF>;
-      };
-      combo_lalt {
-        timeout-ms = <50>;
-        key-positions = <11 13>;
-        bindings = <&cm LALT LALT>;
-        layers = <DEF>;
-      };
-      combo_ralt {
-        timeout-ms = <50>;
-        key-positions = <16 18>;
-        bindings = <&cm LALT LALT>;
-        layers = <DEF>;
-      };
-      combo_lgui {
-        timeout-ms = <50>;
-        key-positions = <11 12 13>;
-        bindings = <&cm LGUI LGUI>;
-        layers = <DEF>;
-      };
-      combo_rgui {
-        timeout-ms = <50>;
-        key-positions = <16 17 18>;
-        bindings = <&cm LGUI LGUI>;
-        layers = <DEF>;
-      };
-      combo_caps {
-        timeout-ms = <50>;
-        key-positions = <14 15>;
-        bindings = <&kp CAPS>;
-        layers = <DEF>;
-      };
+    combo_sys {
+      timeout-ms = <30>;
+      key-positions = <17 18 19>;
+      bindings = <&to SYS>;
+    };
+    combo_caps {
+      timeout-ms = <30>;
+      key-positions = <27 28 29>;
+      bindings = <&caps_word>;
+    };
+    lshft {
+      timeout-ms = <20>;
+      key-positions = <23 24>;
+      bindings = <&kp LSHIFT>;
+      layers = <SYS>;
+    };
+    lclk {
+      timeout-ms = <20>;
+      key-positions = <27 28>;
+      bindings <&mkp LCLK>;
+      layers = <SYS>;
+    };
+    rclk {
+      timeout-ms = <20>;
+      key-positions = <17 18>;
+      bindings <&mkp RCLK>;
+      layers = <SYS>;
+    };
+    mclk {
+      timeout-ms = <20>;
+      key-positions = <18 27>;
+      bindings = <&mkp MCLK>;
+      layers = <SYS>;
+    }
   };
   
 };
