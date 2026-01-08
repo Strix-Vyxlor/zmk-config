@@ -253,7 +253,7 @@
     };
     cptd: copy_paste_tap_dance { 
       compatible = "zmk,behavior-tap-dance";
-      label = "TAPDANCE5";
+      label = "TAPDANCE6";
       #binding-cells = <0>;
       tapping-term-ms = <190>;
       bindings = <&kp LC(BE_C)>, <&kp LC(BE_V)>;
