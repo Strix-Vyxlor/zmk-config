@@ -74,7 +74,7 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2 &none                       &none &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 &none
-        &kp BE_MINUS &kp BE_PLUS &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQUAL
+        &kp BE_MINS &kp BE_PLUS &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQL
                           &sr LSHIFT AL1 &none                       &none &kp GUI
       >;
     };
