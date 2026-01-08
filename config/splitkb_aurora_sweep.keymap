@@ -262,38 +262,38 @@
   combos {
     compatible = "zmk,combos";
     combo_sys {
-      timeout-ms = <50>;
-      key-positions = <17 18 19>;
+      timeout-ms = <30>;
+      key-positions = <16 17 18>;
       bindings = <&to SYS>;
       layers = <AL1>;
     };
     combo_caps {
-      timeout-ms = <50>;
-      key-positions = <27 28 29>;
+      timeout-ms = <30>;
+      key-positions = <26 27 28>;
       bindings = <&caps_word>;
       layers = <AL1>;
     };
     lshft {
-      timeout-ms = <50>;
-      key-positions = <23 24>;
+      timeout-ms = <20>;
+      key-positions = <22 23>;
       bindings = <&kp LSHIFT>;
       layers = <SYS>;
     };
     lclk {
-      timeout-ms = <50>;
-      key-positions = <27 28>;
+      timeout-ms = <20>;
+      key-positions = <26 27>;
       bindings = <&mkp LCLK>;
       layers = <SYS>;
     };
     rclk {
-      timeout-ms = <50>;
-      key-positions = <17 18>;
+      timeout-ms = <20>;
+      key-positions = <16 17>;
       bindings = <&mkp RCLK>;
       layers = <SYS>;
     };
     mclk {
-      timeout-ms = <50>;
-      key-positions = <18 27>;
+      timeout-ms = <20>;
+      key-positions = <17 26>;
       bindings = <&mkp MCLK>;
       layers = <SYS>;
     };
