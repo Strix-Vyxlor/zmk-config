@@ -55,7 +55,7 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &kp BE_J &kp BE_Q &kp BE_W &none                       &none &kp BE_V &kp BE_QUOT  &kp BE_Z &none
-        &kp BE_X &kp BE_P &kp BE_B &kp BE_K &none                       &none &kp BE_M &kp BE_DOT &kp BE_F &kp BE_Y
+        &kp BE_X &kp BE_K &kp BE_B &kp BE_P &none                       &none &kp BE_M &kp BE_DOT &kp BE_F &kp BE_Y
                           &sk LSHIFT &none                       &none &sl ALU
       >;
 
@@ -64,7 +64,7 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &kp LS(BE_W) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &none  &kp LS(BE_Z) &none
-        &kp LS(BE_X) &kp LS(BE_P) &kp LS(BE_B) &kp LS(BE_K) &none                       &none &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Y)
+        &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P) &none                       &none &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Y)
                           &trans &none                       &none &none
       >;
     };
@@ -82,24 +82,24 @@
     symbol1 {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp BE_MINS &kp BE_LPRN &kp BE_RPRN &none                       &none &td BE_QUOT BE_DQUO &td BE_QUES BE_EXLM &kp BE_PERC &none
-        &kp BE_ASTR &kp BE_UNDS &kp BE_LCBR &kp BE_RCBR &none                       &none &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
+        &none &kp BE_MINS &kp BE_LCBR &kp BE_RCBR &none                       &none &qttd &pttd &kp BE_PERC &none
+        &kp BE_ASTR &kp BE_UNDS &kp BE_LPRN &kp BE_RPRN &none                       &none &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
                           &trans &none                       &none &trans
       >;
     };
     symbol2 {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &td BE_EGRV BE_EACU &kp BE_LABK &kp BE_RABK &none                       &none &kp BE_HASH &kp BE_AMPR &kp BE_AT &none
-        &etre &td BE_CCED BE_AGRV &kp BE_LBRC &kp BE_RBRC &none                       &none &kp BE_PIPE &kp BE_DLR &untd 0 0 &none
+        &none &etd &kp BE_LABK &kp BE_RABK &none                       &none &kp BE_HASH &kp BE_AMPR &kp BE_AT &none
+        &etre &frtd &kp BE_LBRC &kp BE_RBRC &none                       &none &kp BE_PIPE &kp BE_DLR &untd 0 0 &none
                           &trans &none                       &none &trans
       >;
     };
     system {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp ESC &none &none &none                       &none &td LC(BE_V) LC(BE_C) &kp UP &kp BSPC &none
-        &kp TAB &td HOME DEL &kp PG_DN &kp PG_UP &none                       &none &kp LEFT &kp DOWN &kp RIGHT &kp RET
+        &none &kp ESC &none &none &none                       &none &cptd &kp UP &kp BSPC &none
+        &kp TAB &hdtd &kp PG_DN &kp PG_UP &none                       &none &kp LEFT &kp DOWN &kp RIGHT &kp RET
                           &sr LSHIFT AL1 &none                       &none &none
       >;
     };
@@ -200,9 +200,9 @@
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
-    td: tapdance {
+    th: taphold {
       compatible = "zmk,behavior-hold-tap";
-      label = "TAPDANCE";
+      label = "TAPHOLD";
       #binding-cells = <2>;
       tapping-term-ms = <190>;
       quick-tap-ms = <250>;
@@ -210,13 +210,53 @@
       bindings = <&kp>, <&kp>;
     }; 
     untd: undead_tapdance {
-      compatible = "zmk,behavior-hold-tap";
-      label = "TAPDANCE";
-      #binding-cells = <2>;
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE0";
+      #binding-cells = <0>;
       tapping-term-ms = <190>;
-      quick-tap-ms = <250>;
-      flavor = "tap-preferred";
       bindings = <&udgr>, <&udtd>;
+    };
+    qttd: quotes_tap_dance {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE1";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_DQUO>, <&kp BE_QUOT>;
+    };
+    pttd: punctuation_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE2";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_EXLM>, <&kp BE_QUES>;
+    };
+    hdtd: home_delete_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE3";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp DEL>, <&kp HOME>;
+    };
+    etd: e_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE4";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_EACU>, <&kp BE_EGRV>;
+    };
+    frtd: french_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE5";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_AGRV>, <&kp BE_CCED>;
+    };
+    cptd: copy_paste_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE5";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp LC(BE_C)>, <&kp LC(BE_V)>;
     };
   };
   combos {
