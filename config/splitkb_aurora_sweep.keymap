@@ -91,7 +91,7 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &etd &kp BE_LABK &kp BE_RABK &none                       &none &kp BE_HASH &kp BE_AMPR &kp BE_AT &none
-        &etre &frtd &kp BE_LBRC &kp BE_RBRC &none                       &none &kp BE_PIPE &kp BE_DLR &untd 0 0 &none
+        &etre &frtd &kp BE_LBRC &kp BE_RBRC &none                       &none &kp BE_PIPE &kp BE_DLR &untd &none
                           &trans &none                       &none &trans
       >;
     };
