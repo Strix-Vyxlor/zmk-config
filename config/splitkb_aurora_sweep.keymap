@@ -46,7 +46,7 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D &none                       &none &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C &none
-        &hl_l NUM BE_A &hl_l SM2 BE_R &hl_l SM1 BE_S &hl_l SYS BE_T &none                       &none &hl_r SYS BE_N &hl_r SM1 BE_E &hl_r SM2 BE_I &hl_r NUM BE_O
+        &hl_l NUM BE_A &hl_l SM2 BE_R &hl_l SM1 BE_S &hl_l SYS BE_T &none                       &none &hl_r SYS BE_N &hl_r SM1 BE_E &hl_r SM2 BE_O &hl_r NUM BE_I
                           &kp SPC &key_repeat                  &caps_alpha2macro &alpha2macro
       >;
     };
