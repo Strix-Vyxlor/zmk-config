@@ -82,7 +82,7 @@
     symbol1 {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp BE_MINUS &kp BE_LPRN &kp BE_RPRN &none                       &none &td BE_QUOT BE_DQUO &td BE_QUES BE_EXLM &kp BE_PERC &none
+        &none &kp BE_MINS &kp BE_LPRN &kp BE_RPRN &none                       &none &td BE_QUOT BE_DQUO &td BE_QUES BE_EXLM &kp BE_PERC &none
         &kp BE_ASTR &kp BE_UNDS &kp BE_LCBR &kp BE_RCBR &none                       &none &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
                           &trans &none                       &none &trans
       >;
