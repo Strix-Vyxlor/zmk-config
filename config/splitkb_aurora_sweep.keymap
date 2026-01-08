@@ -73,8 +73,8 @@
     number {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &hm_l LALT BE_DOT &hm_l LCTRL BE_N1 &hm_l LGUI BE_N2 &none                       &none &hm_r RGUI BE_N3 &hm_r RCTRL BE_N4 &hm_r RALT BE_N5 &none
-        &kp BE_MINUS &kp BE_PLUS &kp BE_N6 &kp BE_N7 &none                       &none &kp BE_N8 &kp BE_N9 &kp BE_N0 &kp BE_EQUAL
+        &none &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2 &none                       &none &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 &none
+        &kp BE_MINUS &kp BE_PLUS &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQUAL
                           &sr LSHIFT AL1 &none                       &none &kp GUI
       >;
     };
