@@ -54,8 +54,8 @@
     alpha2 {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp BE_J &kp BE_Q &kp BE_W &none                       &none &kp BE_V &kp BE_QUOT  &kp BE_Z &none
-        &kp BE_X &kp BE_K &kp BE_B &kp BE_P &none                       &none &kp BE_M &kp BE_DOT &kp BE_F &kp BE_Y
+        &none &kp BE_J &kp BE_Q &kp BE_W &none                       &none &kp BE_V &kp BE_QUOT  &kp BE_Y &none
+        &kp BE_X &kp BE_K &kp BE_B &kp BE_P &none                       &none &kp BE_M &kp BE_DOT &kp BE_F &kp BE_Z
                           &sk LSHIFT &none                       &none &sl ALU
       >;
 
@@ -63,8 +63,8 @@
     alpha2caps {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp LS(BE_W) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &none  &kp LS(BE_Z) &none
-        &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P) &none                       &none &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Y)
+        &none &kp LS(BE_W) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &none  &kp LS(BE_Y) &none
+        &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P) &none                       &none &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Z)
                           &trans &none                       &none &none
       >;
     };
