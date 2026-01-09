@@ -18,6 +18,7 @@
 #define SM1 4  // symbol 1
 #define SM2 5  // symbol 2
 #define SYS 6  // system layer
+#define BTL 7  // bluetooth layer
 
 &mt {
     tapping-term-ms = <201>;
@@ -47,7 +48,7 @@
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D &none                       &none &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C &none
         &hl_l NUM BE_A &hl_l SM2 BE_R &hl_l SM1 BE_S &hl_l SYS BE_T &none                       &none &hl_r SYS BE_N &hl_r SM1 BE_E &hl_r SM2 BE_O &hl_r NUM BE_I
-                          &kp SPC &key_repeat                  &caps_alpha2macro &alpha2macro
+                          &kp SPC &caps_alpha2macro                  &key_repeat &alpha2macro
       >;
     };
 
@@ -101,6 +102,14 @@
         &none &kp ESC &none &none &none                       &none &cptd &kp UP &kp BSPC &none
         &kp TAB &hdtd &kp PG_DN &kp PG_UP &none                       &none &kp LEFT &kp DOWN &kp RIGHT &kp RET
                           &sr LSHIFT AL1 &none                       &none &none
+      >;
+    };
+    bluetooth {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none                       &none &none &bt BT_DISC &bt BT_CLR &none
+        &none &bt BT_SEL 3 &bt BT_SEL 4 &none &none                       &none &none &none &none &none
+                          &to AL1 &none                       &none &none
       >;
     };
     blank_layer {
@@ -272,6 +281,12 @@
       key-positions = <26 27 28>;
       bindings = <&caps_word>;
       layers = <AL1>;
+    };
+    combo_bt {
+      timeout-ms = <30>;
+      key-positions = <12 13>;
+      bindings = <&to BTL>;
+      layers = <SYS>;
     };
     lshft {
       timeout-ms = <20>;
