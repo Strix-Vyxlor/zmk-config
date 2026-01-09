@@ -19,6 +19,7 @@
 #define SM2 5  // symbol 2
 #define SYS 6  // system layer
 #define BTL 7  // bluetooth layer
+#define WIN 8  // window manager
 
 &mt {
     tapping-term-ms = <201>;
@@ -76,7 +77,7 @@
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2 &none                       &none &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 &none
         &kp BE_MINS &kp BE_PLUS &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQL
-                          &sr LSHIFT AL1 &none                       &none &kp GUI
+                          &sr LSHIFT AL1 &none                       &none &sl WIN
       >;
     };
 
@@ -112,6 +113,14 @@
                           &to AL1 &none                       &none &none
       >;
     };
+    window_manager {
+      bindings = <
+        &none &none &none &none &none                       &none &none &none &none &none
+        &none &hws N5 &hws N6 &hws N7 &none                       &none &hww N5 &hww N6 &hww N7 &none
+        &hws N1 &hws N2 &hws N3 &hws N4 &none                       &none &hww N1 &hww N2 &hww N3 &hww N4
+                          &to AL1 &none                       &none &none
+      >;
+    };
     blank_layer {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
@@ -120,7 +129,6 @@
                           &none &none                       &none &none
       >;
     };
-
   };
 
 
@@ -159,6 +167,31 @@
       wait-ms = <40>;
       tap-ms = <40>;
       bindings = <&kp BE_DIAE>, <&kp BE_E>;
+    };
+    hws: hyprland_workspace_switch {
+      compatible = "zmk,behavior-macro-one-param";
+      wait-ms = <40>;
+      tap-ms = <40>;
+      #binding-cells = <1>;
+      bindings = 
+        <&macro_press &kp LGUI>,
+        <&macro_param_1to1>,
+        <&macro_tap &kp 0>,
+        <&macro_release &kp LGUI>;
+    };
+
+    hww: hyprland_window_to_workspace {
+      compatible = "zmk,behavior-macro-one-param";
+      wait-ms = <40>;
+      tap-ms = <40>;
+      #binding-cells = <1>;
+      bindings = 
+        <&macro_press &kp LGUI>,
+        <&macro_press &kp LSHFT>,
+        <&macro_param_1to1>,
+        <&macro_tap &kp 0>,
+        <&macro_release &kp LSHFT>,
+        <&macro_release &kp LGUI>;
     };
   };
 
