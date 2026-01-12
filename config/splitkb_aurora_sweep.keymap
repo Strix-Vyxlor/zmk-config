@@ -49,7 +49,7 @@
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D &none                       &none &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C &none
         &hl_l NUM BE_A &hl_l SM2 BE_R &hl_l SM1 BE_S &hl_l SYS BE_T &none                       &none &hl_r SYS BE_N &hl_r SM1 BE_E &hl_r SM2 BE_O &hl_r NUM BE_I
-                          &kp SPC &caps_alpha2macro                  &key_repeat &alpha2macro
+                          &kp SPC &window_macro                 &key_repeat &alpha2macro
       >;
     };
 
@@ -65,7 +65,7 @@
     alpha2caps {
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
-        &none &kp LS(BE_W) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &none  &kp LS(BE_Y) &none
+        &none &kp LS(BE_J) &kp LS(BE_Q) &kp LS(BE_W) &none                       &none &kp LS(BE_V) &kp BE_QUES  &kp LS(BE_Y) &none
         &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P) &none                       &none &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Z)
                           &trans &none                       &none &none
       >;
@@ -76,8 +76,8 @@
       bindings = <
         &none &none &none &none &none                       &none &none &none &none &none
         &none &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2 &none                       &none &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 &none
-        &kp BE_MINS &kp BE_PLUS &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQL
-                          &sr LSHIFT AL1 &none                       &none &sl WIN
+        &mdrtd &smptd &kp BE_6 &kp BE_7 &none                       &none &kp BE_8 &kp BE_9 &kp BE_0 &kp BE_EQL
+                          &sr LSHIFT AL1 &none                       &none &prntd
       >;
     };
 
@@ -145,6 +145,12 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &sl ALU >;
     };
+    window_macro: behavior_macro_3 {
+      compatible = "zmk,behavior-macro";
+      label = "MACRO3";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &sl WIN >;
+    };
     udtd: undead_tilda {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -159,7 +165,7 @@
       wait-ms = <40>;
       tap-ms = <40>;
       bindings = <&kp BE_GRV>, <&kp SPACE>;
-    };
+    }; 
 
     etre: e-trema {
       compatible = "zmk,behavior-macro";
@@ -300,6 +306,27 @@
       tapping-term-ms = <190>;
       bindings = <&kp LC(BE_C)>, <&kp LC(BE_V)>;
     };
+    smptd: sum_multiply_power_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE7";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_PLUS>, <&kp BE_ASTR>, <&kp BE_CIRC>;
+    };
+    mdrtd: min_devide_remain_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE8";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_MINS>, <&kp BE_SLSH>, <&kp BE_PERC>;
+    };
+    prntd: min_devide_remain_tap_dance { 
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAPDANCE9";
+      #binding-cells = <0>;
+      tapping-term-ms = <190>;
+      bindings = <&kp BE_LPRN>, <&kp BE_RPRN>;
+    };
   };
   combos {
     compatible = "zmk,combos";
@@ -350,7 +377,7 @@
       key-positions = <12 13>;
       bindings = <&mkp MCLK>;
       layers = <SYS>;
-    };
+    }; 
   };
   
 };
