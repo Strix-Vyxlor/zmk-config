@@ -320,7 +320,7 @@
       tapping-term-ms = <190>;
       bindings = <&kp BE_MINS>, <&kp BE_SLSH>, <&kp BE_PERC>;
     };
-    prntd: min_devide_remain_tap_dance { 
+    prntd: paren_tap_dance { 
       compatible = "zmk,behavior-tap-dance";
       label = "TAPDANCE9";
       #binding-cells = <0>;
