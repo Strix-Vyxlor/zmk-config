@@ -87,7 +87,7 @@
     };
     system {
       bindings = <
-                &kp ESC &kp CTRL  &none                        &cptd    &kp UP   &kp BSPC 
+                &kp ESC &kp LCTRL  &none                        &cptd    &kp UP   &kp BSPC 
         &kp TAB &hdtd   &kp PG_DN &kp PG_UP                    &kp LEFT &kp DOWN &kp RIGHT &kp RET
                        &sr LSHIFT AL1 &none                    &none &none
       >;
