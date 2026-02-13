@@ -1,0 +1,13 @@
+file_format: "1"
+id: strix_piano
+name: Strix piano
+type: shield
+url: none
+requires: [pro_micro]
+exposes: [nice_view]
+features:
+  - keys
+  - display
+siblings:
+  - strix_piano_left
+  - strix_piano_right

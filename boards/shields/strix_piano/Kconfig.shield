@@ -1,0 +1,7 @@
+# No whitespace after the comma or in your part name!
+config SHIELD_STRIX_PIANO_LEFT
+    def_bool $(shields_list_contains,strix_piano_left)
+
+# No whitespace after the comma or in your part name!
+config SHIELD_STRIX_PIANO_RIGHT
+    def_bool $(shields_list_contains,strix_piano_right)
