@@ -316,49 +316,49 @@
     compatible = "zmk,combos";
     combo_sys {
       timeout-ms = <30>;
-      key-positions = <16 17 18>;
+      key-positions = <3 4 5>;
       bindings = <&to SYS>;
       layers = <AL1>;
     };
     combo_sys_1 {
       timeout-ms = <30>;
-      key-positions = <11 12 13>;
+      key-positions = <0 1 2>;
       bindings = <&to SYS>;
       layers = <AL1>;
     };
     combo_caps {
       timeout-ms = <30>;
-      key-positions = <26 27 28>;
+      key-positions = <10 11 12>;
       bindings = <&caps_word>;
       layers = <AL1>;
     };
     combo_bt {
       timeout-ms = <30>;
-      key-positions = <16 17>;
+      key-positions = <3 4>;
       bindings = <&to BTL>;
       layers = <SYS>;
     };
     lshft {
       timeout-ms = <20>;
-      key-positions = <20 21>;
+      key-positions = <6 7>;
       bindings = <&kp LSHIFT>;
       layers = <SYS>;
     };
     lclk {
       timeout-ms = <20>;
-      key-positions = <22 23>;
+      key-positions = <8 9>;
       bindings = <&mkp LCLK>;
       layers = <SYS>;
     };
     rclk {
       timeout-ms = <20>;
-      key-positions = <12 23>;
+      key-positions = <1 9>;
       bindings = <&mkp RCLK>;
       layers = <SYS>;
     };
     mclk {
       timeout-ms = <20>;
-      key-positions = <12 13>;
+      key-positions = <1 2>;
       bindings = <&mkp MCLK>;
       layers = <SYS>;
     }; 
