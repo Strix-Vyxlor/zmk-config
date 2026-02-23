@@ -14,6 +14,7 @@
 #define SYS 6  // system layer
 #define BTL 7  // bluetooth layer
 #define WIN 8  // window manager
+#define FKE 9  // f-keys
 
 &mt {
     tapping-term-ms = <201>;
@@ -42,7 +43,7 @@
       bindings = <
                        &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D                         &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C 
         &hl_l NUM BE_A &hl_l SM2 BE_R  &hl_l SM1 BE_S   &hl_l SYS BE_T                          &hl_r SYS BE_N  &hl_r SM1 BE_E   &hl_r SM2 BE_O  &hl_r NUM BE_I
-                                                  &kp SPC &window_macro                         &key_repeat &alpha2macro
+                                                   &kp SPC &fkeys FKE 0                        &key_repeat &alpha2macro
       >;
     };
 
@@ -106,6 +107,14 @@
                           &to AL1 &none                         &none &none
       >;
     };
+    f_keys {
+      bindings = <
+              &kp F9 &kp F10 &kp F11          &kp f12 &none &none 
+        &kp F1 &kp F2 &kp F3 &kp F4          &kp F5 &kp F6 &kp F7 &kp F8 
+                    &none &none          &none &none
+      >;
+    };
+
     blank_layer {
       bindings = <
               &none &none &none          &none &none &none 
@@ -132,7 +141,7 @@
     window_macro: behavior_macro_3 {
       compatible = "zmk,behavior-macro";
       label = "MACRO3";
-      #binding-cells = <0>;
+      #binding-cells = ;
       bindings = <&macro_tap &sl WIN >;
     };
     udtd: undead_tilda {
@@ -231,6 +240,15 @@
       quick-tap-ms = <250>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
+    };
+    fkeys: f_keys_window {
+      compatible = "zmk,behavior-hold-tap";
+      label = "F_KEYS_WINDOW";
+      #binding-cells = <2>;
+      tapping-term-ms = <220>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&window_manager>;
     };
     th: taphold {
       compatible = "zmk,behavior-hold-tap";
