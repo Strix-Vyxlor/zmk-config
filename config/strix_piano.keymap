@@ -109,7 +109,7 @@
     };
     f_keys {
       bindings = <
-              &kp F9 &kp F10 &kp F11          &kp f12 &none &none 
+              &kp F9 &kp F10 &kp F11          &kp F12 &none &none 
         &kp F1 &kp F2 &kp F3 &kp F4          &kp F5 &kp F6 &kp F7 &kp F8 
                     &none &none          &none &none
       >;
