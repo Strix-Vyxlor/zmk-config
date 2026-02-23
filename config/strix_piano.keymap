@@ -141,7 +141,7 @@
     window_macro: behavior_macro_3 {
       compatible = "zmk,behavior-macro";
       label = "MACRO3";
-      #binding-cells = ;
+      #binding-cells = <0>;
       bindings = <&macro_tap &sl WIN >;
     };
     udtd: undead_tilda {
