@@ -15,6 +15,7 @@
 #define BTL 7  // bluetooth layer
 #define WIN 8  // window manager
 #define FKE 9  // f-keys
+#define MED 10 // media
 
 &mt {
     tapping-term-ms = <201>;
@@ -41,70 +42,70 @@
 
     alpha1 {
       bindings = <
-                       &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D                         &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C 
-        &hl_l NUM BE_A &hl_l SM2 BE_R  &hl_l SM1 BE_S   &hl_l SYS BE_T                          &hl_r SYS BE_N  &hl_r SM1 BE_E   &hl_r SM2 BE_O  &hl_r NUM BE_I
-                                                   &kp SPC &fkeys FKE 0                        &key_repeat &alpha2macro
+                       &hm_l LALT BE_H &hm_l LCTRL BE_G &hm_l LGUI BE_D          &hm_r RGUI BE_L &hm_r RCTRL BE_U &hm_r RALT BE_C 
+        &hl_l NUM BE_A &hl_l SM2 BE_R  &hl_l SM1 BE_S   &hl_l SYS BE_T           &hl_r SYS BE_N  &hl_r SM1 BE_E   &hl_r SM2 BE_O  &hl_r NUM BE_I
+                                                   &kp SPC &fkeys FKE 0          &rh MED 0 &alpha2macro
       >;
     };
 
     alpha2 {
       bindings = <
-                 &kp BE_J &kp BE_Q &kp BE_W                         &kp BE_V &kp BE_QUOT &kp BE_Y 
-        &kp BE_X &kp BE_K &kp BE_B &kp BE_P                         &kp BE_M &kp BE_DOT  &kp BE_F &kp BE_Z
-                           &sk LSHIFT &none                         &none &sl ALU
+                 &kp BE_J &kp BE_Q &kp BE_W          &kp BE_V &kp BE_QUOT &kp BE_Y 
+        &kp BE_X &kp BE_K &kp BE_B &kp BE_P          &kp BE_M &kp BE_DOT  &kp BE_F &kp BE_Z
+                           &sk LSHIFT &none          &none &sl ALU
       >;
 
     };
     alpha2caps {
       bindings = <
-                     &kp LS(BE_J) &kp LS(BE_Q) &kp LS(BE_W)                         &kp LS(BE_V) &kp BE_QUES &kp LS(BE_Y) 
-        &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P)                         &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Z)
-                                               &trans &none                         &none &none
+                     &kp LS(BE_J) &kp LS(BE_Q) &kp LS(BE_W)          &kp LS(BE_V) &kp BE_QUES &kp LS(BE_Y) 
+        &kp LS(BE_X) &kp LS(BE_K) &kp LS(BE_B) &kp LS(BE_P)          &kp LS(BE_M) &kp BE_COMM &kp LS(BE_F) &kp LS(BE_Z)
+                                               &trans &none          &none &none
       >;
     };
 
 
     number {
       bindings = <
-               &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2                        &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 
-        &mdrtd &smptd            &kp BE_6         &kp BE_7                               &kp BE_8        &kp BE_9         &kp BE_0        &kp BE_EQL
-                                             &sr LSHIFT AL1 &none                        &none &prntd
+               &hm_l LALT BE_DOT &hm_l LCTRL BE_1 &hm_l LGUI BE_2          &hm_r RGUI BE_3 &hm_r RCTRL BE_4 &hm_r RALT BE_5 
+        &mdrtd &smptd            &kp BE_6         &kp BE_7                 &kp BE_8        &kp BE_9         &kp BE_0        &kp BE_EQL
+                                             &sr LSHIFT AL1 &none          &none &prntd
       >;
     };
 
     symbol1 {
       bindings = <
-                    &kp BE_MINS &kp BE_LCBR &kp BE_RCBR                         &qttd       &pttd       &kp BE_PERC 
-        &kp BE_ASTR &kp BE_UNDS &kp BE_LPRN &kp BE_RPRN                         &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
-                                           &trans &none                         &none &trans
+                    &kp BE_MINS &kp BE_LCBR &kp BE_RCBR          &qttd       &pttd       &kp BE_PERC 
+        &kp BE_ASTR &kp BE_UNDS &kp BE_LPRN &kp BE_RPRN          &kp BE_SLSH &kp BE_SCLN &kp BE_COLN &kp BE_EQL
+                                           &trans &none          &none &trans
       >;
     };
     symbol2 {
       bindings = <
-              &etd  &kp BE_LABK &kp BE_RABK                         &kp BE_HASH &kp BE_AMPR &kp BE_AT 
-        &etre &frtd &kp BE_LBRC &kp BE_RBRC                         &kp BE_PIPE &kp BE_DLR  &untd     &none 
-                               &trans &none                         &none &trans
+              &etd  &kp BE_LABK &kp BE_RABK          &kp BE_HASH &kp BE_AMPR &kp BE_AT 
+        &etre &frtd &kp BE_LBRC &kp BE_RBRC          &kp BE_PIPE &kp BE_DLR  &untd     &none 
+                               &trans &none          &none &trans
       >;
     };
     system {
       bindings = <
-                &kp ESC &kp LCTRL  &none                        &cptd    &kp UP   &kp BSPC 
-        &kp TAB &hdtd   &kp PG_DN &kp PG_UP                    &kp LEFT &kp DOWN &kp RIGHT &kp RET
-                       &sr LSHIFT AL1 &none                    &none &none
+                &kp ESC &kp LCTRL  &kp HOME          &cptd    &kp UP   &kp BSPC 
+        &kp TAB &hdtd   &kp PG_DN &kp PG_UP          &kp LEFT &kp DOWN &kp RIGHT &kp RET
+                       &sr LSHIFT AL1 &none          &none &none
       >;
     };
     bluetooth {
       bindings = <
-              &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2                       &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 
-        &none &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG                       &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_CLR    &none
-                                        &to AL1 &none                      &none &none
+              &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2          &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 
+        &none &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG          &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_CLR    &none
+                                       &to AL1 &none          &none &none
       >;
     };
     window_manager {
       bindings = <
-                &hws N5 &hws N6 &hws N7                         &hww N5 &hww N6 &hww N7 
-        &hws N1 &hws N2 &hws N3 &hws N4                         &hww N1 &hww N2 &hww N3 &hww N4
-                          &to AL1 &none                         &none &none
+                &hws N5 &hws N6 &hws N7          &hww N5 &hww N6 &hww N7 
+        &hws N1 &hws N2 &hws N3 &hws N4          &hww N1 &hww N2 &hww N3 &hww N4
+                          &to AL1 &none          &none &none
       >;
     };
     f_keys {
@@ -112,6 +113,14 @@
                &kp F9 &kp F10 &kp F11          &kp F12 &none  &none 
         &kp F1 &kp F2 &kp F3  &kp F4           &kp F5  &kp F6 &kp F7 &kp F8 
                           &none &none          &none &none
+      >;
+    };
+
+    media {
+      bindings = <
+              &none &none        &none                 &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE 
+        &none &none &kp C_BRI_UP &kp C_BRI_DN          &kp C_PREV   &kp C_PP     &kp C_NEXT &kp PSCRN 
+                                  &none &none          &none &none
       >;
     };
 
@@ -249,6 +258,15 @@
       quick-tap-ms = <250>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&window_macro>;
+    };
+    rh: repeat_hold {
+      compatible = "zmk,behavior-hold-tap";
+      label = "REPEAT_HOLD";
+      #binding-cells = <2>;
+      tapping-term-ms = <220>;
+      quick-tap-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&repeat_hold>;
     };
     th: taphold {
       compatible = "zmk,behavior-hold-tap";
