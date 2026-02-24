@@ -266,7 +266,7 @@
       tapping-term-ms = <220>;
       quick-tap-ms = <250>;
       flavor = "tap-preferred";
-      bindings = <&mo>, <&repeat_hold>;
+      bindings = <&mo>, <&key_repeat>;
     };
     th: taphold {
       compatible = "zmk,behavior-hold-tap";
